@@ -1,0 +1,9 @@
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: "Source Sans Pro",sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    text-rendering: optimizelegibility;
+}
