@@ -7,3 +7,48 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 20px;
     text-rendering: optimizelegibility;
 }
+
+
+.title {
+    color: inherit;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+.main-container {
+    background: url("../img/pmbohmWater.jpg") #5098bf repeat-y fixed;
+}
+
+.main-container .main {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.main-container .main,
+.main aside {
+    background-color: rgba(250, 250, 250, 0.9);
+}
+
+.main aside {
+    border-radius: .5em;
+}
+
+.header-container {
+}
+
+.footer-container,
+.main aside {
+}
+
+.header-container,
+.footer-container,
+.main aside {
+}

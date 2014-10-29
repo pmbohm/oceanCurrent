@@ -13,16 +13,6 @@ html {
     line-height: 1.4;
 }
 
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
 hr {
     display: block;
     height: 1px;
@@ -70,28 +60,6 @@ body {
     margin: 0 5%;
 }
 
-/* ===================
-    ALL: Orange Theme
-   =================== */
-
-.header-container {
-    border-bottom: 20px solid #e44d26;
-}
-
-.footer-container,
-.main aside {
-    border-top: 20px solid #e44d26;
-}
-
-.header-container,
-.footer-container,
-.main aside {
-    background: #f16529;
-}
-
-.title {
-    color: white;
-}
 
 /* ==============
     MOBILE: Menu
@@ -111,13 +79,11 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 
-    color: white;
-    background: #e44d26;
+    background: inherit;
 }
 
 nav a:hover,
 nav a:visited {
-    color: white;
 }
 
 nav a:hover {
@@ -137,12 +103,10 @@ nav a:hover {
 }
 
 .main aside {
-    color: white;
-    padding: 0px 5% 10px;
+    padding: 0 5% 10px;
 }
 
 .footer-container footer {
-    color: white;
     padding: 20px 0;
 }
 
@@ -199,8 +163,7 @@ nav a:hover {
     WIDE: CSS3 Effects
    ==================== */
 
-    .header-container,
-    .main aside {
+    .header-container {
         -webkit-box-shadow: 0 5px 10px #aaa;
            -moz-box-shadow: 0 5px 10px #aaa;
                 box-shadow: 0 5px 10px #aaa;
