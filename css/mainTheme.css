@@ -23,7 +23,7 @@ h1, h2, h3, h4 {
     color: darkorange;
 }
 
-/* gradient cross browser hack */
+/* gradient cross browser brute force hack */
 h2 span {
     background: url(../img/white-gradient.png) repeat-x;
     position: absolute;
@@ -34,12 +34,14 @@ h2 span {
 @media only screen and (min-width: 300px) {
     .header-container header h1 {
         font-size: 36px;
+        margin-bottom: 0;
     }
     .header-container header h2 {
         font-size: 24px;
+        margin: .2em 0;
     }
     h2 span {
-        width: 200px;
+        width: 360px;
     }
 
 }
@@ -47,14 +49,15 @@ h2 span {
 @media only screen and (min-width: 768px) {
     .header-container header h1 {
         font-size: 50px;
-        margin-bottom: .5em;
+        margin-bottom: .2em;
     }
     .header-container header h2 {
-        font-size: 34px;
+        font-size: 29px;
         margin-top: .5em;
     }
     h2 span {
         width: 500px;
+        margin-top: -2px;
     }
 }
 
