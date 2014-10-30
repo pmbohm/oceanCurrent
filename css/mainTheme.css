@@ -6,7 +6,8 @@
 
 
 body{
-    font-family: "Libre Baskerville,";
+    font-family: "Libre Baskerville", "Book Antiqua", serif;
+    text-rendering: optimizelegibility;
 }
 
 .header-container h1 {
@@ -17,8 +18,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     font-family: "Oswald",sans-serif;
     font-weight: 700;
-    line-height: 20px;
-    text-rendering: optimizelegibility;
 }
 
 .header-container h1 {
@@ -33,7 +32,9 @@ a {
     float: left;
 }
 
-
+/*
+pseudo-element applies rules to the portion of a document that has been highlighted
+*/
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -44,13 +45,34 @@ a {
     text-shadow: none;
 }
 
-body {
-
-    background: url("../img/pmbohmWater.jpg") #5098bf repeat-y fixed;
+.bodyImage {
+    background: url("../img/pmbohmWater.jpg") #5098bf 0 -50px no-repeat fixed;
     /*background-position: bottom right, left, right;*/
-
-    background-size: 110% auto;
+    background-size: 100% auto;
     background-blend-mode: darken, luminosity;
+
+
+}
+
+.parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.parallax__layer--base {
+    transform: translateZ(0);
+}
+.parallax__layer--back {
+    /*transform: translateZ(2px) scale(2);*/
+    transform: translateY(-5em) scale(1.2);
 }
 
 .header-container header{
@@ -63,6 +85,9 @@ body {
     padding-right: 30px;
 }
 
+
+
+
 nav ul, nav ol {
     font-family: "Helvetica";
 }
@@ -74,4 +99,5 @@ nav ul, nav ol {
 
 .main aside {
     border-radius: .5em;
+    background-color: white;
 }
