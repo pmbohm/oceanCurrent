@@ -1,0 +1,84 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+html, body {
+    height: 100%;
+}
+
+/*
+The colour palette used in this css
+http://paletton.com/#uid=13t0u0kjDE+9iUue+N7nHx-tnua
+*/
+
+h1, h2, h3, h4 {
+    font-family: "Oswald", sans-serif;
+}
+
+.grey {
+    color: #888;
+}
+
+.jumbotron {
+    padding-bottom: 0;
+}
+
+.jumbotron .navbar {
+    margin: 0
+}
+.jumbotron h1,
+.jumbotron h2,
+.jumbotron a.homelink  {
+    color: inherit;
+    margin: 0;
+
+}
+.jumbotron a.btn-primary {
+    color: white;
+}
+
+.jumbotron .navbar a {
+    color: inherit;
+}
+
+.jumbotron .navbar a:hover {
+    text-decoration: underline;
+}
+
+.jumbotronFooter {
+    margin-top: 30px;
+    background-color: #666;
+    min-height: 100% !important;
+    height: 100% !important;
+    color: white;
+    margin-bottom: 30px;
+    padding: 30px 15px;
+    font-size: 12px;
+}
+
+.jumbotron p {
+    margin-bottom: 0;
+}
+
+.jumbotronFooter a {
+    color: #ccc;
+}
+
+.jumbotron .container {
+    padding-right: 200px;
+}
+
+#IMOSLogo {
+}
+
+ul.arrowed li:before {
+    content: "►";
+    font-size: .7em;
+    margin-top: .3em;
+    display: block;
+    float: left;
+    width: 1.2em;
+    color: #999;
+}
+
+.floatRight {
+    float: right;
+}

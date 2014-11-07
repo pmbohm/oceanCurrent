@@ -1,0 +1,37 @@
+/*
+ Parallax backgrounds
+*/
+
+.paraContainer {
+    perspective: 1px;
+    height: 50vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.paraItem {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.paraBase {
+    transform: translateY(0);
+}
+
+div[class^="paraBackground"] {
+    transform: translateY(-20px) scale(1.05);
+}
+
+.paraBackground1 {
+    background-color: #5098bf;
+    background: url("../img/pmbohmWater.jpg") 0 0 no-repeat fixed;
+    background-size: 100% auto;
+}
+
+.paraBase .container {
+    background-color: #fff;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1));
+}
