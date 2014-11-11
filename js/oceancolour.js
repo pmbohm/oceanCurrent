@@ -33,7 +33,7 @@ if (typeof jQuery === 'undefined') {
         $('#basicModal').modal({
             show: true,
             keyboard: true,
-            });
+        });
 
 
     });

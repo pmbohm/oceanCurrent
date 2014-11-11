@@ -1,7 +1,6 @@
-
 <?
 $title = "Pass Mean";
-ini_set('include_path', './' . PATH_SEPARATOR .  '../' . PATH_SEPARATOR . ini_get('include_path'));
+ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
 ?>
 <h3>Pass Mean</h3>

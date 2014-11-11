@@ -17,7 +17,8 @@ include_once("include/header.php");
     <a href="http://ibis.grdl.noaa.gov/SAT/NearRealTime/" target="blank">NOAA Laboratory for Satellite Altimetry</a>
     via the <a href="http://rads.tudelft.nl/rads/rads.shtml" target="blank">Radar Altimeter Database System (RADS)</a>.
     In the plots linked above, some data points (sometimes whole tracks) are outlined in magenta, signifying that they
-    have been rejected by our automatic <a href="passmean/index.php">quality control</a>. At present this includes the very-most
+    have been rejected by our automatic <a href="passmean/index.php">quality
+    control</a>. At present this includes the very-most
     recent days' data from some satellites because a sufficiently-accurate estimate of the satellite's orbit is not available.
     The switch to RADS has allowed us to make use of newer versions of some of the quantities that need to be estimated
     in order to calculate sea surface height anomaly from radar range. This has resulted in closer agreement between the
@@ -74,7 +75,8 @@ include_once("include/header.php");
     <a href=L3S_3d_SE_t/>[SE]</a>
 
     <h3>Argo</h3>
-    The latest Argo data are downloaded daily from the <a href=ftp://ftp.ifremer.fr/ifremer/argo/latest_data/> ARGO GDAC FTP
+    The latest Argo data are downloaded daily from the <a href=ftp://ftp.ifremer.fr/ifremer/argo/latest_data/> ARGO GDAC
+    FTP
     site</a>.
 
 

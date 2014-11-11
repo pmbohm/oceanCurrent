@@ -1,6 +1,6 @@
 <?
- $title = "SST";
-ini_set('include_path', './' . PATH_SEPARATOR .  '../' . PATH_SEPARATOR . ini_get('include_path'));
+$title = "SST";
+ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
 ?>
 
@@ -36,7 +36,6 @@ include_once("include/header.php");
 
             <div>
                 <h2>Sea Surface Temperature</h2>
-
                 <ul class="list-unstyled arrowed">
                     <li>Geostrophic Currents</li>
                     <li>Snapshot SST</li>

@@ -1,6 +1,6 @@
 <?
 $title = "Ocean colour products";
-ini_set('include_path', './' . PATH_SEPARATOR .  '../' . PATH_SEPARATOR . ini_get('include_path'));
+ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
 ?>
 
@@ -19,7 +19,6 @@ include_once("include/header.php");
             <div>
                 <h2>Ocean Colour</h2>
                 <h5>(experimental)</h5>
-
                 <ul class="list-unstyled arrowed">
                     <li>Geostrophic Currents</li>
                     <li>Sea level</li>
@@ -28,10 +27,8 @@ include_once("include/header.php");
                 </ul>
             </div>
         </div>
-
         <div class="col-md-8">
             <? // display latest ?>
-
         </div>
     </div>
 <?
