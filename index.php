@@ -1,5 +1,7 @@
 <?
-include('header.php');
+// todo this is added to every file. it need to be added to a custom  php.ini file
+ini_set('include_path', './' . PATH_SEPARATOR .  '../' . PATH_SEPARATOR . ini_get('include_path'));
+include_once("include/header.php");
 ?>
 
 <h3 class="grey"><em>Satellite derived surface properties, SST, ocean colour and geostrophic currents</em></h3>
@@ -15,7 +17,7 @@ include('header.php');
             <li>2004 till Now ..</li>
         </ul>
 
-        <p><a class="btn btn-default" href="sst.php" role="button">Products &raquo;</a></p>
+        <p><a class="btn btn-primary" href="sst.php" role="button">Maps+Graphs &raquo;</a></p>
 
 
     </div>
@@ -30,7 +32,7 @@ include('header.php');
             <li>1993 till Now ..</li>
         </ul>
 
-        <p><a class="btn btn-default" href="oceancolour.php" role="button">Products &raquo;</a></p>
+        <p><a class="btn btn-primary" href="oceancolour.php" role="button">Maps+Graphs &raquo;</a></p>
     </div>
 
     <div class="col-md-4">
@@ -43,13 +45,13 @@ include('header.php');
             <li>6 day average SST</li>
         </ul>
 
-        <p><a class="btn btn-default" href="#" role="button">Products &raquo;</a></p>
+        <p><a class="btn btn-primary" href="#" role="button">Maps+Graphs &raquo;</a></p>
     </div>
 
 </div>
 
 
 <?
-include('footer.php');
+include_once("include/footer.php");
 ?>
 
