@@ -52,7 +52,7 @@ h1, h2, h3, h4 {
 }
 
 .jumbotron .navbar a:hover {
-    font-weight: bold;
+    font-color: #000;
 }
 
 .jumbotronFooter {

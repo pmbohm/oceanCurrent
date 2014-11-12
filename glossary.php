@@ -149,7 +149,7 @@ include_once("include/header.php");
         at the depth of the engine water intake, or remotely by satellite (see <a href=#AVHRR>AVHRR</a>) or airplane.
     <dt><a name="synTS"> synTS </a>
     <dd>short for 'synthetic temperature and salinity'. This data product is also described on this website as
-        'Satellite adjusted climatology' as explained at <a href=http://oceancurrent.imos.org.au/profiles/whatsshown.htm>[what's shown]<a>. The synTS
+        'Satellite adjusted climatology' as explained at <a href=<?=$BASEDIR ?>profiles/whatsshown.php>[what's shown]<a>. The synTS
                 method is described by <a href=misc/references.htm>Ridgway and Dunn (2010)</a>.
                 <dt><a name="GLD"> Surface Drifter</a>
                 <dd>The principle method for validating our altimetric surface velocity estimates is by comparing them

@@ -14,7 +14,7 @@ include_once("include/header.php");
                 <area shape="rect" coords="61   98  146  149" href="GAB/latest.html" title="GAB">
                 <area shape="rect" coords="88  149  160  189" href="SO/latest.html" title="SO">
             </map>
-            <img src="http://oceancurrent.imos.org.au/misc/imap2.gif" usemap="#imap2">
+            <img src="http://oceancurrent.imos.org.au/misc/imap2.gif" usemap="#imap2"> <!-- todo these should be relative -->
 
             <div>
                 <h2>Ocean Colour</h2>
@@ -28,7 +28,9 @@ include_once("include/header.php");
             </div>
         </div>
         <div class="col-md-8">
-            <div id="graphContainer"></div>
+            <div id="graphContainer">
+                <h4>Click on the map to see the graphs</h4>
+            </div>
         </div>
     </div>
 <?

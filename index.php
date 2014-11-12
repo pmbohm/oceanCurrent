@@ -35,7 +35,7 @@ include_once("include/header.php");
             <li>Sea level</li>
             <li>6 day average SST</li>
         </ul>
-        <p><a class="btn btn-primary" href="#" role="button">Maps+Graphs &raquo;</a></p>
+        <p><a class="btn btn-primary" href="observations.php" role="button">Maps+Graphs &raquo;</a></p>
     </div>
 </div>
 
