@@ -9,8 +9,7 @@ if (typeof jQuery === 'undefined') {
     $('area').each(function () {
 
         $(this).attr("href", function (index, old) {
-            $(this).attr("target", "thisframe");
-            return "proxy.php?request=" + encodeURIComponent(old);
+            $(this).attr("onclick", "setGraph('" + encodeURIComponent(old) + "');return false;");
         });
     });
 
@@ -18,23 +17,29 @@ if (typeof jQuery === 'undefined') {
 
 
 +function ($) {
+    // todo implement
     $('#openBtn').click(function () {
 
         $('#basicModal').on('show.bs.modal', function () {
-
-            console.log($('#openBtn').attr("iframe-data"));
             $('#iframe-container').attr(
                 "src",
                 $('#openBtn').attr("iframe-data")
             );
-            console.log($('#iframe-container').attr("src"));
-
         });
         $('#basicModal').modal({
             show: true,
-            keyboard: true,
+            keyboard: true
         });
-
-
     });
 }(jQuery);
+
+function setGraph(encodedURIComponent) {
+    var data = {'ocrequest': encodedURIComponent};
+    $.get("proxy.php", data, function (data, status) {
+        if (status == "success") {
+            $('#graphContainer').html(data);
+            //console.log("Data: " + data + "\nStatus: " + status);
+        }
+    });
+
+}

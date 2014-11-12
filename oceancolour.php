@@ -28,7 +28,7 @@ include_once("include/header.php");
             </div>
         </div>
         <div class="col-md-8">
-            <? // display latest ?>
+            <div id="graphContainer"></div>
         </div>
     </div>
 <?

@@ -49,7 +49,8 @@ include_once("include/header.php");
                     http://www.bootply.com/61676
                     BootstrapDialog.alert('I want banana!');
                     http://nakupanda.github.io/bootstrap3-dialog/-->
-            <a data-toggle="modal" href="acknowl.php" data-target="#modal">Click me</a>
+            <!--<a data-toggle="modal" href="acknowl.php" data-target="#modal">Click me</a>-->
+            <div id="graphContainer"></div>
         </div>
     </div>
 <?
