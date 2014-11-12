@@ -3,7 +3,7 @@
 /*
 * adapted from http://www.snip2code.com/Snippet/30795/Simple-PHP-Proxy-Script/
 */
-
+require_once('Template.php');
 $baseUrl = "http://oceancurrent.imos.org.au";
 $context = "";
 $method = $_SERVER['REQUEST_METHOD'];
@@ -50,9 +50,9 @@ if ($_GET && $_GET['ocrequest']) {
 function parseResults($res, $baseUrl, $context) {
 
     if (false) {
-        $result = "<code>\n";
-        $result .= nl2br(htmlspecialchars($res)) . "\n\n";
-        $result .= "</code><BR><BR>\n\n\n";
+        $debug = "<code>\n";
+        $debug .= nl2br(htmlspecialchars($res)) . "\n\n";
+        $debug .= "</code><BR><BR>\n\n\n";
         // end of debugging output
     }
 
@@ -61,16 +61,24 @@ function parseResults($res, $baseUrl, $context) {
     // find the image
     preg_match('/src=(.*?)>/', $res, $imgFilename);
 
-
     if (strlen($imgFilename[1]) > 0) {
-        $urlArray = array("<img src=\"" . $baseUrl, $context, getOcrequestFolder(), $imgFilename[1] . "\" />\n");
-        $result .= implode("/", array_filter($urlArray));
+        $urlArray = array($baseUrl, $context, getOcrequestFolder(), $imgFilename[1]);
+        $imageUrl = implode("/", array_filter($urlArray));
     } else {
 
         $urlArray = array($baseUrl, $context, getOcrequestFolder(), $imgFilename[1]);
-        $result = "<p class=\"bg-danger\">Graph not found at: " . implode("/", array_filter($urlArray)) . "</p>";
+        $error = "<p class=\"bg-danger\">Graph not found at: " . implode("/", array_filter($urlArray)) . "</p>";
     }
-    echo $result;
+
+    $data = array('debug' => $debug,
+        'folderName' => getOcrequestFolder(),
+        'imageUrl' => $imageUrl,
+        'imgNameDate' => formatFilenameAsDate($imgFilename[1]),
+        'error' => $error,
+        'datePicker' => "todo"
+    );
+    $tmpl = new Template('views/proxyTpl.php', $data);
+    echo $tmpl->render();
 }
 
 function getOcrequestFolder() {
@@ -78,6 +86,39 @@ function getOcrequestFolder() {
     $pathArray = explode("/", urldecode($_GET['ocrequest']));
     array_pop($pathArray);
     return implode("/", $pathArray);
+}
+
+function formatFilenameAsDate($filename) {
+
+    $possibleDate = stripExtension($filename);
+    $inputDateFormats = array("YmdG","Ymd");
+    $outputDateFormats = array("(%s/%s/%s %s:00 Z)","(%s/%s/%s)");
+    $len = count($inputDateFormats);
+
+    // try formats till one works ? mmm. worth a try
+    for ($i = 0; $i < $len; $i++) {
+        $dateArray = date_parse_from_format( $inputDateFormats[$i] , $possibleDate );
+        $outputDateFormat = $outputDateFormats[$i];
+        if ($dateArray[error_count] == 0) {
+            $i = $len;
+        }
+    }
+
+    if ($dateArray[error_count] == 0) {
+        $res = sprintf($outputDateFormat,
+            $dateArray[year],
+            $dateArray[month],
+            $dateArray[day],
+            $dateArray[hour]
+        );
+        return $res;
+    }
+
+}
+
+function stripExtension($filename) {
+    //http://stackoverflow.com/questions/2395882/how-to-remove-extension-from-string-only-real-extension
+    return preg_replace('/\\.[^.\\s]{2,3}$/', '', $filename);
 }
 
 ?>

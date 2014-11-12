@@ -16,7 +16,7 @@
                     <a href="http://imos.org.au/imostermsofuse0.html">Conditions of use</a>
                 </p>
                 <p>&copy; 2014 IMOS</p>
-                <a href="#" iframe-data="<? echo $BASEDIR ?>oceancurrentHTMs/install.htm" class="btn" id="openBtn">Open
+                <a href="#" iframe-data="<?=$BASEDIR ?>oceancurrentHTMs/install.htm" class="btn" id="openBtn">Open
                     modal TEST!! </a>
             </div>
         </footer>
@@ -46,9 +46,9 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="<? echo $BASEDIR ?>js/bootstrap.min.js"></script>
-<script src="<? echo $BASEDIR ?>js/oceancolour.js"></script>
+<script src="<?=$BASEDIR ?>js/bootstrap.js"></script>
+<script src="<?=$BASEDIR ?>js/oceancolour.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="<? echo $BASEDIR ?>js/ie10-viewport-bug-workaround.js"></script>
+<script src="<?=$BASEDIR ?>js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

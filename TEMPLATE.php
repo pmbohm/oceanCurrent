@@ -1,17 +1,40 @@
-<?
-//$title = "TEMPLATE";
-ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
-include_once("include/header.php");
-?>
+<?php
+/*
+ *
+ * usage:
+ * $data = array('title' => 'My title', 'content' => 'My content');
+ * $tmpl = new Template('template.php', $data);
+ * echo $tmpl->render();
+*/
 
-    <!--
+class Template {
 
-   Use layout components from http://getbootstrap.com/css/#grid
-   Any relative links (not in the same directory as the templated file) should be prepended with
-   <? /* echo $BASEDIR */ ?>
+    protected $path, $data;
 
--->
+    public function __construct($path, $data = array()) {
+        $this->path = $path;
+        $this->data = $data;
+    }
 
-<?
-include("include/footer.php");
+    public function render() {
+        if (file_exists($this->path)) {
+            //Extracts vars to current view scope
+            extract($this->data);
+
+            //Starts output buffering
+            ob_start();
+
+            //Includes contents
+            include $this->path;
+            $buffer = ob_get_contents();
+            @ob_end_clean();
+
+            //Returns output buffer
+            return $buffer;
+        } else {
+            //Throws exception
+        }
+    }
+}
+
 ?>

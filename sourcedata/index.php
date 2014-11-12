@@ -13,7 +13,7 @@ include_once("include/header.php");
     <a href="SRL_RADS/latest.html">[SARAL]</a> and
     <a href="ENV_RADS/latest.html">[Envisat (until April 2012)]</a>
     along with tidegauges (see below) to make maps of sea surface height anomaly for the Australasian region.
-    These <a href="<? echo $BASEDIR ?>glossary.php#altimeter" target="blank">altimetry</a> data are now sourced from the
+    These <a href="<?=$BASEDIR ?>glossary.php#altimeter" target="blank">altimetry</a> data are now sourced from the
     <a href="http://ibis.grdl.noaa.gov/SAT/NearRealTime/" target="blank">NOAA Laboratory for Satellite Altimetry</a>
     via the <a href="http://rads.tudelft.nl/rads/rads.shtml" target="blank">Radar Altimeter Database System (RADS)</a>.
     In the plots linked above, some data points (sometimes whole tracks) are outlined in magenta, signifying that they
