@@ -1,3 +1,5 @@
+<?=$debug?>
+
 <h3>Graph of the '<?=$folderName ?>' region. <span><?=$imgNameDate ?></span></h3>
 <nav class="navbar navbar-default" role="navigation">
    <div class="container-fluid">
@@ -15,13 +17,15 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <ul class="nav navbar-nav navbar-right">
-            <li><a class="navbar-brand" href="<?=$BASEDIR ?>index.php"
+            <li><a class="navbar-brand" href="<?=$folderName ?>/<?=$previous?>"
+                   onclick="setGraph('<?=$folderName ?>/<?=$previous?>');return false;"
                    alt="Previous available time period for <?=$folderName ?>"
-                   title="Next available time period for <?=$folderName ?>">Previous</a>
+                   title="Previous available time period for <?=$folderName ?>">Previous</a>
             </li>
-            <li><a class="navbar-brand" href="<?=$BASEDIR ?>index.php?"
+            <li><a class="navbar-brand" href="<?=$folderName ?>/<?=next?>"
+                   onclick="setGraph('<?=$folderName ?>/<?=$next?>');return false;"
                    alt="Next available time period for <?=$folderName ?>"
-                   title="Previous available time period for <?=$folderName ?>">Next</a>
+                   title="Next available time period for <?=$folderName ?>">Next</a>
             </li>
          </ul>
       </div><? //.navbar-collapse ?>

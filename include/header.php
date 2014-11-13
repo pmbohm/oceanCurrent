@@ -1,20 +1,8 @@
 <?
 
-// report all errors but don't display them publicly
-//error_reporting(E_ALL);
-//ini_set('display_errors', 0);
+include_once('config.php');
+$BASEDIR = getBaseDir(getcwd(),$CONTEXT);
 
-$context = "OceanCurrent";
-// todo sort out this
-$BASEDIR = "";
-$cwd = explode("/", getcwd());
-while (count($cwd) > 0) {
-    if (array_pop($cwd) != $context) {
-        $BASEDIR .= "../";
-    } else {
-        $cwd = null;
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -25,11 +13,11 @@ while (count($cwd) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="eMII eMarine Information Infrastructure">
-    <link rel="icon" href="<?= $BASEDIR ?>img/IMOSfavicon.ico">
+    <link rel="icon" href="<?=$BASEDIR ?>img/IMOSfavicon.ico">
     <title><? echo $title;
         echo " IMOS-OceanCurrent" ?></title>
-    <link href="<?= $BASEDIR ?>css/bootstrap.css" rel="stylesheet">
-    <link href="<?= $BASEDIR ?>css/oceancurrent.css" rel="stylesheet">
+    <link href="<?=$BASEDIR ?>css/bootstrap.css" rel="stylesheet">
+    <link href="<?=$BASEDIR ?>css/oceancurrent.css" rel="stylesheet">
     <!--<link href="css/parallax.css" rel="stylesheet"-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

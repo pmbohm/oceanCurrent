@@ -3,9 +3,25 @@
 /*
 * adapted from http://www.snip2code.com/Snippet/30795/Simple-PHP-Proxy-Script/
 */
+
+// todo this is added to every file. it need to be added to a custom php.ini file
+ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
+
+
 require_once('Template.php');
+require_once('include/config.php');
+$BASEDIR = getBaseDir(getcwd(),$CONTEXT);
+
+/*
+ * todo fix horrible hack for development
+ */
+if ($ENVIRONMENT == "development") {
+    $BASEDIR = subtractString($BASEDIR, $CONTEXT);
+}
+
+
+
 $baseUrl = "http://oceancurrent.imos.org.au";
-$context = "";
 $method = $_SERVER['REQUEST_METHOD'];
 
 
@@ -13,7 +29,7 @@ if ($_GET && $_GET['ocrequest']) {
     $headers = getallheaders();
     $headers_str = [];
 
-    $fullUrlArray = array($baseUrl, $context, urldecode($_GET['ocrequest']));
+    $fullUrlArray = array($baseUrl, $BASEDIR, urldecode($_GET['ocrequest']));
     $url = implode("/", array_filter($fullUrlArray));
 
     foreach ($headers as $key => $value) {
@@ -41,7 +57,7 @@ if ($_GET && $_GET['ocrequest']) {
         $info = curl_getinfo($ch);
         //print_r($info);
     } else {
-        parseResults($result, $baseUrl, $context);
+        parseResults($result, $baseUrl, $BASEDIR);
     }
 
     curl_close($ch);
@@ -53,26 +69,35 @@ function parseResults($res, $baseUrl, $context) {
         $debug = "<code>\n";
         $debug .= nl2br(htmlspecialchars($res)) . "\n\n";
         $debug .= "</code><BR><BR>\n\n\n";
-        // end of debugging output
     }
 
-    //$resArray = explode("\n", $res);
+    $resArray = explode("\n", $res);
 
     // find the image
     preg_match('/src=(.*?)>/', $res, $imgFilename);
-
     if (strlen($imgFilename[1]) > 0) {
         $urlArray = array($baseUrl, $context, getOcrequestFolder(), $imgFilename[1]);
         $imageUrl = implode("/", array_filter($urlArray));
     } else {
-
         $urlArray = array($baseUrl, $context, getOcrequestFolder(), $imgFilename[1]);
-        $error = "<p class=\"bg-danger\">Graph not found at: " . implode("/", array_filter($urlArray)) . "</p>";
+        $error = "Graph not found at: " . implode("/", array_filter($urlArray));
+    }
+
+    // find the links to the nearest files
+    foreach ($resArray as $line) {
+        if (preg_match('/PREV/', $line)) {
+            preg_match('/href=(.*?)>/', $line, $previous);
+        }
+        if (preg_match('/NEXT/', $line)) {
+            preg_match('/href=(.*?)>/', $line, $next);
+        }
     }
 
     $data = array('debug' => $debug,
         'folderName' => getOcrequestFolder(),
         'imageUrl' => $imageUrl,
+        'previous' => $previous[1],
+        'next' => $next[1],
         'imgNameDate' => formatFilenameAsDate($imgFilename[1]),
         'error' => $error,
         'datePicker' => "todo"
@@ -113,7 +138,6 @@ function formatFilenameAsDate($filename) {
         );
         return $res;
     }
-
 }
 
 function stripExtension($filename) {

@@ -2,6 +2,7 @@
 // todo this is added to every file. it need to be added to a custom  php.ini file
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
+
 ?>
 
 <h3 class="grey"><em>Satellite derived surface properties, SST, ocean colour and geostrophic currents</em></h3>
