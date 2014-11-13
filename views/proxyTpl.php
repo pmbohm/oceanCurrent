@@ -31,4 +31,4 @@
       </div><? //.navbar-collapse ?>
    </div><? //.container-fluid ?>
 </nav>
-<img src="<?=$imageUrl?>" alt="<?=$imageUrl?>" />
+<img class="slowLoad" src="<?=$imageUrl?>" alt="Loading <?=$imageUrl?>">
