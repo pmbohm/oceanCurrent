@@ -5,7 +5,7 @@ include_once("include/header.php");
 ?>
 
 
-    <h2>What's shown</h2>
+    <h2>What's shown - Profiles</h2>
     <h3>Argo temperature and salinity down to 2000m depth - What's shown</h3>
     <p>
         The Argo <a href=<?= $BASEDIR ?>profiles/map/latest.html> [position maps]</a> like the example above show floats that reported data

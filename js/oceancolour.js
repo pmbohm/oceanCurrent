@@ -15,7 +15,7 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
-
+//showing of modal popup
 +function ($) {
     // todo implement
     $('#openBtn').click(function () {
@@ -32,6 +32,22 @@ if (typeof jQuery === 'undefined') {
         });
     });
 }(jQuery);
+
+
+// bind .load() to each image when the DOM's ready
++function ($) {
+    // fade in each image individually as they are downloaded
+    $(document).on('load', 'img.slowLoad', null, function() {
+        console.log("image on load");
+        $(this).fadeIn('slow');
+    });
+
+    $('.slowLoad').on('load', '.slowLoad', function(){
+        console.log("image on load");
+    });
+
+}(jQuery);
+
 
 function setGraph(encodedURIComponent) {
     var data = {'ocrequest': encodedURIComponent};

@@ -5,7 +5,7 @@ include_once("include/header.php");
 
 ?>
 
-<h3 class="grey"><em>Satellite derived surface properties, SST, ocean colour and geostrophic currents</em></h3>
+<h3 class="greyHeader">Satellite derived surface properties, SST, ocean colour and geostrophic currents</h3>
 <div class="row">
     <div class="col-md-4">
         <h2>Sea Surface Temperature</h2>
@@ -18,25 +18,16 @@ include_once("include/header.php");
         <p><a class="btn btn-primary" href="sst.php" role="button">Maps+Graphs &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Ocean Colour</h2>
-        <h5>(experimental)</h5>
+        <h2>Ocean Colour (experimental)</h2>
         <ul class="list-unstyled arrowed">
             <li>Geostrophic Currents</li>
-            <li>Sea level</li>
-            <li>3 day average SST</li>
-            <li>1993 till Now ..</li>
+            <li>Chlorophyl A</li>
+            <li>2002-now</li>
         </ul>
         <p><a class="btn btn-primary" href="oceancolour.php" role="button">Maps+Graphs &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Observations</h2>
-        <ul class="list-unstyled arrowed">
-            <li>Large area plots</li>
-            <li>Geostrophic Currents</li>
-            <li>Sea level</li>
-            <li>6 day average SST</li>
-        </ul>
-        <p><a class="btn btn-primary" href="observations.php" role="button">Maps+Graphs &raquo;</a></p>
     </div>
 </div>
 

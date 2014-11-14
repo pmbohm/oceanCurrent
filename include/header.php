@@ -40,7 +40,7 @@ $BASEDIR = getBaseDir(getcwd(),$CONTEXT);
 
                     <h2><span></span>Surface Currents and Temperature</h2>
                 </a>
-                <h3 class="grey"><i>&#8220; Up to date ocean information around Australia. &#8221;</i></h3>
+                <h3 class="greyHeader">&#8220; Up to date ocean information around Australia. &#8221;</h3>
             </header>
             <p><a class="btn btn-primary" href="<?= $BASEDIR ?>news.php" role="button">Latest News &raquo;</a></p>
             <nav class="navbar navbar-default" role="navigation">
@@ -64,8 +64,10 @@ $BASEDIR = getBaseDir(getcwd(),$CONTEXT);
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Information<span
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="<?= $BASEDIR ?>profiles/whatsshown.php" alt="Whats shown">What's
+                                    <li><a href="<?= $BASEDIR ?>whatsshown.php" alt="Whats shown">What's
                                             Shown</a></li>
+                                    <li><a href="<?= $BASEDIR ?>profiles/whatsshown.php" alt="Whats shown">What's
+                                            Shown - Profiles</a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?= $BASEDIR ?>acknowl.php"
                                            alt="Acknowledgements">Acknowledgements</a></li>

@@ -65,7 +65,7 @@ if ($_GET && $_GET['ocrequest']) {
 
 function parseResults($res, $baseUrl, $context) {
 
-    if (false) {
+    if (true) {
         $debug = "<code>\n";
         $debug .= nl2br(htmlspecialchars($res)) . "\n\n";
         $debug .= "</code><BR><BR>\n\n\n";

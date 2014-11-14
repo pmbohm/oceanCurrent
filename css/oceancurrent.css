@@ -24,8 +24,9 @@ h1, h2, h3, h4 {
     font-family: "Oswald", sans-serif;
 }
 
-.grey {
+.greyHeader {
     color: #888;
+    font-style: italic;
 }
 
 .whiteWrapper {
@@ -109,4 +110,12 @@ ul.arrowed li:before {
 dt {
     margin-top: 20px;
     font-size: 1.4em;
+}
+
+article {
+    margin-bottom: 3em;
+}
+
+.inlineButton {
+    margin-left: 30px;
 }
