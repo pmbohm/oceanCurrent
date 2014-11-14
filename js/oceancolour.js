@@ -34,7 +34,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 
-// bind .load() to each image when the DOM's ready
+// bind .load() to each image when the DOM's ready NOT WORKING !!!!!
 +function ($) {
     // fade in each image individually as they are downloaded
     $(document).on('load', 'img.slowLoad', null, function() {
@@ -49,12 +49,20 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 
+// markup local links that go to a place in the page. using a hash
++function ($) {
+$('a').each(function(){
+        if($(this).attr("href").indexOf('#') >= 0) {
+        $(this).addClass('anchor');
+    }
+});
+}(jQuery);
+
 function setGraph(encodedURIComponent) {
     var data = {'ocrequest': encodedURIComponent};
     $.get("proxy.php", data, function (data, status) {
         if (status == "success") {
             $('#graphContainer').html(data);
-            //console.log("Data: " + data + "\nStatus: " + status);
         }
     });
 

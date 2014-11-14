@@ -119,3 +119,9 @@ article {
 .inlineButton {
     margin-left: 30px;
 }
+
+a.anchor:after {
+    content: " [?] ";
+    margin: 3px 0;
+    text-decoration: none;
+}

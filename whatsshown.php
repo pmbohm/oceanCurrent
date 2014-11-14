@@ -123,7 +123,7 @@ include_once("include/header.php");
             respect to 2000m included. Being overlain on SST, it is shown just as white contour lines. The result is the
             oceanographer's weather-map, with sea level taking the place of air pressure, and ocean current taking the
             place of the wind. The physics associated with the earth's rotation is analogous to weather systems: <a
-                href=<?= $BASEDIR ?>glossary.htm#geostrophic>geostrophic [?]</a> currents run with the high on their left
+                href=<?= $BASEDIR ?>glossary.htm#geostrophic>geostrophic</a> currents run with the high on their left
             in the southern hemisphere. Black arrow heads depict the direction and strength of the ocean currents.
             Reference should be made to the distribution (left panel) of the available data in order to judge the
             reliability of these estimates. Where no recent data are available, this map will show our estimate of the
