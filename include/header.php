@@ -1,7 +1,7 @@
 <?
 
 include_once('config.php');
-$BASEDIR = getBaseDir(getcwd(),$CONTEXT);
+$BASEDIR = getBaseDir(getcwd(), $CONTEXT);
 
 ?>
 
@@ -13,11 +13,12 @@ $BASEDIR = getBaseDir(getcwd(),$CONTEXT);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="eMII eMarine Information Infrastructure">
-    <link rel="icon" href="<?=$BASEDIR ?>img/IMOSfavicon.ico">
+    <link rel="icon" href="<?= $BASEDIR ?>img/IMOSfavicon.ico">
     <title><? echo $title;
         echo " IMOS-OceanCurrent" ?></title>
-    <link href="<?=$BASEDIR ?>css/bootstrap.css" rel="stylesheet">
-    <link href="<?=$BASEDIR ?>css/oceancurrent.css" rel="stylesheet">
+    <link href="<?= $BASEDIR ?>css/bootstrap.css" rel="stylesheet">
+    <link href="<?= $BASEDIR ?>css/oceancurrent.css" rel="stylesheet">
+    <link href="<?= $BASEDIR ?>css/jumbotronNavbar.css" rel="stylesheet">
     <!--<link href="css/parallax.css" rel="stylesheet"-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,46 +41,54 @@ $BASEDIR = getBaseDir(getcwd(),$CONTEXT);
 
                     <h2><span></span>Surface Currents and Temperature</h2>
                 </a>
-                <h3 class="greyHeader">&#8220; Up to date ocean information around Australia. &#8221;</h3>
+                <h3 class="highlightedHeader">&#8220; Up to date ocean information around Australia. &#8221;</h3>
             </header>
             <p><a class="btn btn-primary" href="<?= $BASEDIR ?>news.php" role="button">Latest News &raquo;</a></p>
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <ul class="nav navbar-nav">
-                            <li><a class="navbar-active" href="http://imos.org.au" alt="IMOS home page">IMOS</a></li>
-                            <li><a class="navbar-active" href="http://portal.imos.org.au" alt="IMOS ocean portal">
-                                    IMOS Ocean Portal</a></li>
-                        </ul>
+        </div>
+        <div class="navbar-container">
+            <div class="container">
+                <nav class="navbar navbar-custom" role="navigation">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <ul class="nav navbar-nav">
+                                <li><a class="navbar-active" href="http://imos.org.au" alt="IMOS home page">IMOS</a>
+                                </li>
+                                <li><a class="navbar-active" href="http://portal.imos.org.au" alt="IMOS ocean portal">
+                                        IMOS Ocean Portal</a></li>
+                            </ul>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a class="navbar-brand" href="<?= $BASEDIR ?>index.php" alt="home page">Home</a>
+                                </li>
+                                <li><a class="navbar-brand" href="<?= $BASEDIR ?>news.php" alt="news items">News</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Information<span
+                                            class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="<?= $BASEDIR ?>whatsshown.php" alt="Whats shown">What's
+                                                Shown</a></li>
+                                        <li><a href="<?= $BASEDIR ?>profiles/whatsshown.php" alt="Whats shown">What's
+                                                Shown - Argo Profiles</a></li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="http://thredds.aodn.org.au/thredds/catalog/IMOS/OceanCurrent/GSLA/NRT00/catalog.html">Near-Real-Time
+                                                gridded altimetry via OPeNDAP</a></li>
+                                        <li><a href="<?= $BASEDIR ?>acknowl.php"
+                                               alt="Acknowledgements">Acknowledgements</a></li>
+                                        <li><a href="<?= $BASEDIR ?>glossary.php" alt="Glossary">Glossary</a></li>
+                                        <li><a href="<?= $BASEDIR ?>misc/references.php" alt="References">References</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a class="navbar-brand" href="<?= $BASEDIR ?>index.php" alt="home page">Home</a>
-                            </li>
-                            <li><a class="navbar-brand" href="<?= $BASEDIR ?>news.php" alt="news items">News</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Information<span
-                                        class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="<?= $BASEDIR ?>whatsshown.php" alt="Whats shown">What's
-                                            Shown</a></li>
-                                    <li><a href="<?= $BASEDIR ?>profiles/whatsshown.php" alt="Whats shown">What's
-                                            Shown - Profiles</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="<?= $BASEDIR ?>acknowl.php"
-                                           alt="Acknowledgements">Acknowledgements</a></li>
-                                    <li><a href="<?= $BASEDIR ?>glossary.php" alt="Glossary">Glossary</a></li>
-                                    <li><a href="<?= $BASEDIR ?>misc/references.php" alt="References">References</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><? //.navbar-collapse ?>
-                </div><? //.container-fluid ?>
-            </nav>
+                </nav>
+            </div>
         </div>
     </div>
     <div class="whiteWrapper">

@@ -6,7 +6,7 @@ include_once("include/header.php");
 
 
     <div class="row">
-        <h3 class="greyHeader">Sea Surface Temperature Maps</h3>
+        <h3 class="highlightedHeader">Sea Surface Temperature Maps</h3>
     </div>
     <div class="row">
         <div class="col-md-4">
