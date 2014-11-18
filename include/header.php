@@ -1,7 +1,7 @@
 <?
 
 include_once('config.php');
-$BASEDIR = getBaseDir(getcwd(),$CONTEXT);
+$BASEDIR = getBaseDir(getcwd(),constant('CONTEXT')); // todo does this work in production??
 
 ?>
 

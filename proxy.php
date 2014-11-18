@@ -10,18 +10,7 @@ ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get
 
 require_once('Template.php');
 require_once('include/config.php');
-$BASEDIR = getBaseDir(getcwd(),$CONTEXT);
 
-/*
- * todo fix horrible hack for development
- */
-if ($ENVIRONMENT == "development") {
-    $BASEDIR = subtractString($BASEDIR, $CONTEXT);
-}
-
-
-
-$baseUrl = "http://oceancurrent.imos.org.au";
 $method = $_SERVER['REQUEST_METHOD'];
 
 
@@ -29,7 +18,7 @@ if ($_GET && $_GET['ocrequest']) {
     $headers = getallheaders();
     $headers_str = [];
 
-    $fullUrlArray = array($baseUrl, $BASEDIR, urldecode($_GET['ocrequest']));
+    $fullUrlArray = array(constant('BASEURL'), $BASEDIR, urldecode($_GET['ocrequest']));
     $url = implode("/", array_filter($fullUrlArray));
 
     foreach ($headers as $key => $value) {
@@ -57,15 +46,14 @@ if ($_GET && $_GET['ocrequest']) {
         $info = curl_getinfo($ch);
         //print_r($info);
     } else {
-        parseResults($result, $baseUrl, $BASEDIR);
+        parseResults($result, constant('BASEURL'), $BASEDIR);
     }
 
     curl_close($ch);
 }
 
-function parseResults($res, $baseUrl, $context) {
-
-    if (true) {
+function parseResults($res, $BASEDIR) {
+    if (DEBUG == 1) {
         $debug = "<code>\n";
         $debug .= nl2br(htmlspecialchars($res)) . "\n\n";
         $debug .= "</code><BR><BR>\n\n\n";
@@ -76,10 +64,10 @@ function parseResults($res, $baseUrl, $context) {
     // find the image
     preg_match('/src=(.*?)>/', $res, $imgFilename);
     if (strlen($imgFilename[1]) > 0) {
-        $urlArray = array($baseUrl, $context, getOcrequestFolder(), $imgFilename[1]);
+        $urlArray = array($BASEDIR, getOcrequestFolder(), $imgFilename[1]);
         $imageUrl = implode("/", array_filter($urlArray));
     } else {
-        $urlArray = array($baseUrl, $context, getOcrequestFolder(), $imgFilename[1]);
+        $urlArray = array($BASEDIR, getOcrequestFolder(), $imgFilename[1]);
         $error = "Graph not found at: " . implode("/", array_filter($urlArray));
     }
 

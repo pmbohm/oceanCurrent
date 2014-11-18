@@ -10,8 +10,11 @@ ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get
 //error_reporting(E_ALL);
 //ini_set('display_errors', 0);
 
-$CONTEXT = "oceanCurrent"; // make a constant
-$ENVIRONMENT = "development"; // used in proxy.php
+define("CONTEXT", "OceanCurrent");
+//define("DEBUG", true); // used in proxy.php
+define("ENVIRONMENT", "development"); // used in proxy.php
+define("BASEURL", "http://oceancurrent.imos.org.au");
+
 
 function getBaseDir($fullCwd, $context) {
     $basedir = "";
