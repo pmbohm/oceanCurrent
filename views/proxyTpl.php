@@ -1,4 +1,5 @@
-<?= $debug ?>
+<?= $debug ?><?=$error ?>
+
 
 <? if ($notARegion) { ?>
     <h3>Map of '<?= $folderName ?>' <span><?= $imgNameDate ?></span></h3>

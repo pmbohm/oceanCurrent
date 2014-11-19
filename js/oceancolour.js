@@ -49,10 +49,12 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 
-// markup local links that go to a place in the page. using a hash
+// markup local links that go to a place in a local page. using a hash
+// excludes hashes just used as placeholders
 +function ($) {
 $('a').each(function(){
-        if($(this).attr("href").indexOf('#') >= 0) {
+        var href = $(this).attr("href");
+        if(href.indexOf('#') >= 0 && href.length > 3) {
         $(this).addClass('anchor');
     }
 });
