@@ -3,6 +3,7 @@ if (typeof jQuery === 'undefined') {
 }
 
 
+
 +function ($) {
 
     // area image maps intercept and send to our proxy
@@ -67,5 +68,29 @@ function setGraph(encodedURIComponent) {
             $('#graphContainer').html(data);
         }
     });
-
 }
+
+//
+/*
+* highlighting of imagemaps
+*
+ <img src="http://davidlynch.org/projects/maphilight/docs/demo_simple.png" class="map " usemap="#simple" >
+ <map name="simple">
+ <area href="#" shape="poly" coords="47,62,123,67,134,72,135,118,50,160" >
+ </map>
+
+ Example using rectangle
+ <area shape="rect" coords="146,83,199,149" href="SE/latest.html" title="SE">
+*
+*
+* */
++function ($) {
+    $('img.highlight').maphilight({
+        //'alwaysOn': true,
+        'fillColor': 'FF7251',
+        'fillOpacity': 0.4,
+        'strokeColor': 'FF532A',
+        'strokeOpacity': 1,
+        'strokeWidth': 2
+    });
+}(jQuery);
