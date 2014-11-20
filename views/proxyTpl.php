@@ -1,4 +1,4 @@
-<?= $debug ?><?=$error ?>
+<?= $debug ?><?= $error ?>
 
 
 <? if ($notARegion) { ?>
@@ -41,4 +41,10 @@
         </div><? //.navbar-collapse ?>
     </div><? //.container-fluid ?>
 </nav>
-<img class="slowLoad" src="<?= $imageUrl ?>" alt="Loading <?= $imageUrl ?>">
+
+<div class="mapImage">
+    <img src="<?= $imageUrl ?>"  alt="Loading <?= $imageUrl ?>">
+</div>
+<script>
+    imgSizer();
+</script>

@@ -90,17 +90,11 @@ include_once("include/header.php");
                         <li>6 day average SST</li>
                     </ul>
                 </div>
-                <div>
-                    <img src="http://davidlynch.org/projects/maphilight/docs/demo_simple.png" class="highlight" usemap="#simple" >
-                    <map name="simple">
-                        <area href="#" shape="poly" coords="47,62,123,67,134,72,135,118,50,160" >
-                    </map>
-                </div>
 
             </article>
         </div>
         <div class="col-md-8">
-            <div id="graphContainer">
+            <div id="mapContainer">
                 <h4>Click on the map to see the graphs</h4>
                 <a href="<?= $BASEDIR ?>whatsshown.php" class="btn btn-primary " type="button">Whats Shown in these maps <span
                         class="badge">GO</span></a>

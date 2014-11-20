@@ -16,7 +16,7 @@
                     <a href="http://imos.org.au/imostermsofuse0.html">Conditions of use</a>
                 </p>
                 <p>&copy; 2014 IMOS</p>
-                <a href="#" iframe-data="<?=$BASEDIR ?>oceancurrentHTMs/install.htm" class="btn" id="openBtn">Open
+                <a href="#" iframe-data="<?=$BASEDIR ?>oceancurrentHTMs/install.htm" class="btn" id="openBtntest">Open
                     modal TEST!! </a>
             </div>
         </footer>
@@ -32,12 +32,8 @@
                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
             <div class="modal-body">
-                <iframe id="iframe-container" src="" style="zoom:0.60" frameborder="3" height="250"
+                <iframe id="iframe-container" src="" style="zoom:0.80" frameborder="3" height="99.6%"
                         width="99.6%"></iframe>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
@@ -47,6 +43,7 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="<?=$BASEDIR ?>js/bootstrap.js"></script>
+<script src="<?=$BASEDIR ?>js/imgLiquid-min.js"></script>
 <script src="<?=$BASEDIR ?>js/maphilight.js"></script>
 <script src="<?=$BASEDIR ?>js/oceancolour.js"></script>
 
