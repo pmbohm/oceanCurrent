@@ -10,9 +10,8 @@ The colour palette used in this css
 http://paletton.com/#uid=13t0u0kjDE+9iUue+N7nHx-tnua
 */
 
-/* works with oceancolour.js */
+
 div.mapImage img {
-    /*display: none;*/
     border-radius: 6px;
     box-shadow: 0 4px 5px 1px #D1D1D1;
     padding: 15px 2px;

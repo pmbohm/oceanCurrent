@@ -25,13 +25,13 @@
         <nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="pager mapPager">
                 <li class="previous"><a class="" href="<?= $folderName ?>/<?= $previous ?>"
-                                        onclick="setProxiedHtms('<?= $folderName ?>/<?= $previous ?>');return false;"
+                                        onclick="setProxiedHtms('latest','<?= $folderName ?>/<?= $previous ?>');return false;"
                                         alt="Previous available time period for <?= $folderName ?>"
                                         title="Previous available time period for <?= $folderName ?>">
                         <span aria-hidden="true">&larr;</span> Previous</a></li>
                 <li><a href="<?= $datePickerUrl ?>" alt="date picker" onclick="setProxiedHtms('index','<?=$datePickerUrl?>');return false;">Date Picker</a></li>
                 <li class="next"><a class="" href="<?= $folderName ?>/<?= $next ?>"
-                                    onclick="setProxiedHtms('<?= $folderName ?>/<?= $next ?>');return false;"
+                                    onclick="setProxiedHtms('latest','<?= $folderName ?>/<?= $next ?>');return false;"
                                     alt="Next available time period for <?= $folderName ?>"
                                     title="Next available time period for <?= $folderName ?>">Next
                         <span aria-hidden="true">&rarr;</span></a></li>
