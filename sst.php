@@ -94,7 +94,7 @@ include_once("include/header.php");
             </article>
         </div>
         <div class="col-md-8">
-            <div id="mapContainer">
+            <div id="proxiedPagesContainer">
                 <h4>Click on the map to see the graphs</h4>
                 <a href="<?= $BASEDIR ?>whatsshown.php" class="btn btn-primary " type="button">Whats Shown in these maps <span
                         class="badge">GO</span></a>

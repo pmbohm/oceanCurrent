@@ -12,9 +12,9 @@ function setModelImageUrl(imgUrl) {
 
 // resize large maps to fit container
 function imgSizer() {
-    var selectorContainer = "div#mapContainer";
+    var selectorContainer = "div#proxiedPagesContainer";
     var max_width = $(selectorContainer).width();
-    var selector = 'div#mapContainer > div.mapImage img';
+    var selector = 'div#proxiedPagesContainer > div.mapImage img';
 
     // Make in memory copy of image to avoid css issues
     $(selector).load(function () {
@@ -45,10 +45,20 @@ function imgSizer() {
     // area image maps intercept and send to our proxy
     $('area').each(function () {
         $(this).attr("href", function (index, old) {
-            $(this).attr("onclick", "setGraph('" + encodeURIComponent(old) + "');return false;");
+            $(this).attr("onclick", "setProxiedHtms('latest','" + encodeURIComponent(old) + "');return false;");
         });
     });
 }(jQuery);
+
+
+function setProxiedHtms(attr,val) {
+    var data = {'request': attr, 'val': val };
+    $.get("proxy.php", data, function (res, status) {
+        if (status == "success") {
+            $('#proxiedPagesContainer').html(res);
+        }
+    });
+}
 
 
 // markup local links that go to a place in a local page. using a hash
@@ -63,14 +73,6 @@ function imgSizer() {
 }(jQuery);
 
 
-function setGraph(encodedURIComponent) {
-    var data = {'ocrequest': encodedURIComponent};
-    $.get("proxy.php", data, function (data, status) {
-        if (status == "success") {
-            $('#mapContainer').html(data);
-        }
-    });
-}
 
 //
 /*

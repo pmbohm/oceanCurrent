@@ -9,8 +9,6 @@
     <h3>Map of the '<?= $folderName ?>' region. <span><?= $imgNameDate ?></span></h3>
 <? } ?>
 
-
-
 <nav class="navbar navbar-default mapNavbar" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -27,13 +25,13 @@
         <nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="pager mapPager">
                 <li class="previous"><a class="" href="<?= $folderName ?>/<?= $previous ?>"
-                                        onclick="setGraph('<?= $folderName ?>/<?= $previous ?>');return false;"
+                                        onclick="setProxiedHtms('<?= $folderName ?>/<?= $previous ?>');return false;"
                                         alt="Previous available time period for <?= $folderName ?>"
                                         title="Previous available time period for <?= $folderName ?>">
                         <span aria-hidden="true">&larr;</span> Previous</a></li>
-                <li><a href="<?= $datePicker ?>" alt="date picker">Date Picker</a></li>
+                <li><a href="<?= $datePickerUrl ?>" alt="date picker" onclick="setProxiedHtms('index','<?=$datePickerUrl?>');return false;">Date Picker</a></li>
                 <li class="next"><a class="" href="<?= $folderName ?>/<?= $next ?>"
-                                    onclick="setGraph('<?= $folderName ?>/<?= $next ?>');return false;"
+                                    onclick="setProxiedHtms('<?= $folderName ?>/<?= $next ?>');return false;"
                                     alt="Next available time period for <?= $folderName ?>"
                                     title="Next available time period for <?= $folderName ?>">Next
                         <span aria-hidden="true">&rarr;</span></a></li>
