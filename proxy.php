@@ -40,19 +40,19 @@ if ($_GET && $_GET['ocrequest']) {
 
     header('Content-Type: text/html');
     $result = curl_exec($ch);
-
+    print_r($url);
     // Check if any error occurred
     if (curl_errno($ch)) {
         $info = curl_getinfo($ch);
         //print_r($info);
     } else {
-        parseResults($result, constant('BASEURL'), $BASEDIR);
+        parseResults($result, constant('BASEURL'), $BASEDIR, $url);
     }
 
     curl_close($ch);
 }
 
-function parseResults($res, $BASEDIR) {
+function parseResults($res, $BASEDIR, $url) {
     if (DEBUG == 1) {
         $debug = "<code>\n";
         $debug .= nl2br(htmlspecialchars($res)) . "\n\n";
@@ -88,7 +88,7 @@ function parseResults($res, $BASEDIR) {
         'next' => $next[1],
         'imgNameDate' => formatFilenameAsDate($imgFilename[1]),
         'error' => $error,
-        'datePicker' => "todo"
+        'datePicker' => $url
     );
     $tmpl = new Template('views/proxyTpl.php', $data);
     echo $tmpl->render();

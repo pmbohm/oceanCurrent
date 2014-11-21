@@ -16,8 +16,7 @@
                     <a href="http://imos.org.au/imostermsofuse0.html">Conditions of use</a>
                 </p>
                 <p>&copy; 2014 IMOS</p>
-                <a href="#" iframe-data="<?=$BASEDIR ?>oceancurrentHTMs/install.htm" class="btn" id="openBtntest">Open
-                    modal TEST!! </a>
+
             </div>
         </footer>
     </div>
@@ -25,15 +24,14 @@
 
 <? // modal frame for graphs/charts/maps ?>
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-lg modal-dialog">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                <h5 class="modal-title" id="fullImageLabel"></h5>
             </div>
             <div class="modal-body">
-                <iframe id="iframe-container" src="" style="zoom:0.80" frameborder="3" height="99.6%"
-                        width="99.6%"></iframe>
+                <img id="fullImage" src="">
             </div>
         </div>
     </div>
