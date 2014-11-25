@@ -4,8 +4,6 @@ ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get
 include_once("include/header.php");
 ?>
 
-
-
     <h2>What's shown</h2>
 
     <div class="alert alert-info">(June 2012 comment: The site has had a number of recent additions, namely the ACORN

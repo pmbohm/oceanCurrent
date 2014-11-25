@@ -40,11 +40,13 @@ $BASEDIR = getBaseDir(getcwd(),constant('CONTEXT')); // todo does this work in p
 
                     <h2><span></span>Surface Currents and Temperature</h2>
                 </a>
-                <h3 class="greyHeader">&#8220; Up to date ocean information around Australia. &#8221;</h3>
+                <h3 class="highlightedHeader">&#8220; Up to date ocean information around Australia. &#8221;</h3>
             </header>
             <p><a class="btn btn-primary" href="<?php echo $BASEDIR ?>news.php" role="button">Latest News &raquo;</a></p>
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
+        </div>
+
+        <nav class="navbar navbar-default navbar-ocheader" role="navigation">
+                <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <ul class="nav navbar-nav">
@@ -78,9 +80,8 @@ $BASEDIR = getBaseDir(getcwd(),constant('CONTEXT')); // todo does this work in p
                             </li>
                         </ul>
                     </div><?php //.navbar-collapse ?>
-                </div><?php //.container-fluid ?>
+                </div><?php //.container ?>
             </nav>
-        </div>
     </div>
     <div class="whiteWrapper">
         <div class="container">

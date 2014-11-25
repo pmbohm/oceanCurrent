@@ -41,7 +41,6 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="<?php echo $BASEDIR ?>js/bootstrap.js"></script>
-<script src="<?php echo $BASEDIR ?>js/imgLiquid-min.js"></script>
 <script src="<?php echo $BASEDIR ?>js/maphilight.js"></script>
 <script src="<?php echo $BASEDIR ?>js/oceancolour.js"></script>
 
