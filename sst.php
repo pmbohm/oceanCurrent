@@ -1,9 +1,8 @@
-<?
+<?php
 $title = "SST";
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
 ?>
-
 
     <div class="row">
         <h3 class="highlightedHeader">Sea Surface Temperature Maps</h3>
@@ -39,7 +38,8 @@ include_once("include/header.php");
                 </map>
                 <div>
                     <h2>SST High-resolution zoom-ins</h2>
-                    <img src="http://oceancurrent.imos.org.au/misc/imap1.gif" usemap="#imap1"><? // todo fix these links for production ?>
+                    <img class="highlight" src="http://oceancurrent.imos.org.au/misc/imap1.gif"
+                         usemap="#imap1"><?php // todo fix these links for production ?>
                     <ul class="list-unstyled arrowed">
                         <li>Geostrophic Currents</li>
                         <li>Snapshot SST</li>
@@ -49,17 +49,19 @@ include_once("include/header.php");
                 </div>
             </article>
             <article>
-                <map name="imap2">
-                    <area shape="rect" coords="129   15  190   83" href="NE/latest.html" title="NE">
-                    <area shape="rect" coords="20   7  95  69" href="NW/latest.html" title="NW">
-                    <area shape="rect" coords="146   83  199  149" href="SE/latest.html" title="SE">
-                    <area shape="rect" coords="3   69   61  134" href="SW/latest.html" title="SW">
-                    <area shape="rect" coords="61   98  146  149" href="GAB/latest.html" title="GAB">
-                    <area shape="rect" coords="88  149  160  189" href="SO/latest.html" title="SO">
-                </map>
                 <div>
+
                     <h2>SST Regional</h2>
-                    <img src="http://oceancurrent.imos.org.au/misc/imap2.gif" usemap="#imap2"><? // todo fix these links for production ?>
+                    <img class="highlight" src="http://oceancurrent.imos.org.au/misc/imap2.gif" usemap="#imap2">
+                    <map name="imap2">
+                        <area shape="rect" coords="129,15,190,83" href="NE/latest.html" title="NE">
+                        <area shape="rect" coords="20,7,95,69" href="NW/latest.html" title="NW">
+                        <area shape="rect" coords="146,83,199,149" href="SE/latest.html" title="SE">
+                        <area shape="rect" coords="3,69,61,134" href="SW/latest.html" title="SW">
+                        <area shape="rect" coords="61,98,146,149" href="GAB/latest.html" title="GAB">
+                        <area shape="rect" coords="88,149,160,189" href="SO/latest.html" title="SO">
+                    </map>
+                    <?php // todo fix these links for production ?>
                     <!-- todo these should be relative -->
                     <ul class="list-unstyled arrowed">
                         <li>Geostrophic Currents</li>
@@ -71,15 +73,16 @@ include_once("include/header.php");
             </article>
             <article>
                 <map name="imap3">
-                    <area shape="rect" coords="7  27  91  64" href="sst_n/latest.html" title="sst_n">
-                    <area shape="rect" coords="7  111   84  144" href="sst_s/latest.html" title="sst_s">
-                    <area shape="rect" coords="88   67  162  101" href="sst_anom/latest.html" title="sst_anom">
-                    <area shape="rect" coords="141   27  205   44" href="ht/latest.html" title="ht">
-                    <area shape="rect" coords="118  111  205  144" href="uv/latest.html" title="uv">
+                    <area shape="rect" coords="7,27,91,64" href="sst_n/latest.html" title="sst_n">
+                    <area shape="rect" coords="7,111,84,144" href="sst_s/latest.html" title="sst_s">
+                    <area shape="rect" coords="88,67,162,101" href="sst_anom/latest.html" title="sst_anom">
+                    <area shape="rect" coords="141,27,205,44" href="ht/latest.html" title="ht">
+                    <area shape="rect" coords="118,111,205,144" href="uv/latest.html" title="uv">
                 </map>
                 <div>
                     <h2>Large area 6 day averages</h2>
-                    <img src="http://oceancurrent.imos.org.au/misc/imap3.gif" usemap="#imap3"><? // todo fix these links for production ?>
+                    <img class="highlight" src="http://oceancurrent.imos.org.au/misc/imap3.gif"
+                         usemap="#imap3"><?php // todo fix these links for production ?>
                     <ul class="list-unstyled arrowed">
                         <li>Large area plots</li>
                         <li>Geostrophic Currents</li>
@@ -87,16 +90,18 @@ include_once("include/header.php");
                         <li>6 day average SST</li>
                     </ul>
                 </div>
+
             </article>
         </div>
         <div class="col-md-8">
-            <div id="graphContainer">
+            <div id="proxiedPagesContainer">
                 <h4>Click on the map to see the graphs</h4>
-                <a href="<?= $BASEDIR ?>whatsshown.php" class="btn btn-primary " type="button">Whats Shown in these maps <span
+                <a href="<?php echo $BASEDIR ?>whatsshown.php" class="btn btn-primary " type="button">Whats Shown in these maps <span
                         class="badge">GO</span></a>
             </div>
         </div>
     </div>
-<?
+
+<?php
 include_once("include/footer.php");
 ?>

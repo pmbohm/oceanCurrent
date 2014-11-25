@@ -1,10 +1,10 @@
-<?
+<?php
 $title = "References";
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
 ?>
 
-   <h2>References <small>(To be completed)</small></h2>
+   <h2>References</h2>
    <p>
       <b><i>Baird, M. E. and K. R. Ridgway (2012)</i></b>, The southward transport of sub-mesoscale lenses of Bass Strait Water in the centre of anti-cyclonic mesoscale eddies, Geophys. Res. Lett., doi:10.1029/2011GL050643, in press.
    </p>
@@ -33,6 +33,6 @@ include_once("include/header.php");
       <b><i>Schiller, A., P. R. Oke, G. B. Brassington, M. Entel, R. Fiedler, D. A. Griffin, and J. Mansbridge (2008)</i></b> Eddy-resolving ocean circulation in the Asian-Australian region inferred from an ocean reanalysis effort. Progress in Oceanography,76, 334-365. doi:10.1016/j.pocean.2008.01.003.
    </p>
 
-<?
+<?php
 include("include/footer.php");
 ?>

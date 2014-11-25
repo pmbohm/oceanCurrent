@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Ocean colour products";
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
@@ -47,11 +47,11 @@ include_once("include/header.php");
 
         </div>
         <div class="col-md-8">
-            <div id="graphContainer">
+            <div id="proxiedPagesContainer">
                 <h4>Click on the map to see the graphs</h4>
             </div>
         </div>
     </div>
-<?
+<?php
 include_once("include/footer.php");
 ?>

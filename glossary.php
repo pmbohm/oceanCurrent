@@ -1,7 +1,9 @@
-<?
+<?php
+
 $title = "Glossary";
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
+
 ?>
 
 <h2>Some explanation of oceanographic terminology, techniques and principles</h2>
@@ -15,13 +17,13 @@ include_once("include/header.php");
         use a combination of GPS, DORIS and laser ranging to carefully monitor the orbit of the satellite. The
         difference of the range and the orbit is the height (averaged over space - the 2km-radius footprint of the
         radar, and time - 1Hz averages are about 7km apart) of the sea surface (effectively relative to the center of
-        the Earth). Amazingly, the <a href=#SSH>sea surface height </a> can be determined to centimeter accuracy, once a
+        the Earth). Amazingly, the <a href="#SSH">sea surface height </a> can be determined to centimeter accuracy, once a
         number of corrections are made, e.g. for the wet troposphere path delay, the sea-state bias and the instrumental
         bias. The Topex/Poseidon and Jason missions are in orbits that take 10 days to finish re-sampling a
         criss-crossing pattern of ascending (/) and descending (\) passes sampling ground tracks which are about 250km
-        apart at mid-latitudes. <a href=misc/orbit.fli> [play orbit movie; shows half a 10-d cycle] </a>. The ERS and
+        apart at mid-latitudes. <a href="misc/orbit.fli"> [play orbit movie; shows half a 10-d cycle] </a>. The ERS and
         Envisat ground tracks are about 160km apart at mid-latitudes, but are re-sampled only every 35 days. The GFO
-        mission is intermediate, with a 17-d repeat cycle. <a href=misc/tr1996.fli> [play movie of Topex/Poseidon and
+        mission is intermediate, with a 17-d repeat cycle. <a href="misc/tr1996.fli"> [play movie of Topex/Poseidon and
             ERS along-track sea level measurements off WA]</a>. More information: <br>
         <a href="http://sealevel.jpl.nasa.gov/" target="blank">Sea Level at NASA JPL</a> <br>
         <a href="http://www.aviso.oceanobs.com/en/home/index.html" target="blank"> AVISO</a> <br>
@@ -44,14 +46,14 @@ include_once("include/header.php");
     <dt><a name="CAST2008"> CAST2008 Mean Dynamic Topography</a>
     <dd> This is an estimate of the Mean Dynamic Topography made by Ken Ridgway and colleagues at CSIRO. It results from
         running the Bluelink global ocean model (OFAM) with very strong nudging to the three-dimensional, seasonally
-        varying, <a href=#CARS>CARS</a> climatological temperature and salinity fields.
+        varying, <a href="#CARS>CARS</a> climatological temperature and salinity fields.
     <dt><a name="CARS"> CARS - the CSIRO Atlas of Regional Seas</a>
     <dd>The name is no longer very appropriate, since the <a
             href=http://www.marine.csiro.au/~dunn/cars2009/>CARS2009 </a> version of this season-resolving hydrographic
         atlas covers the entire globe. It is produced by interpolating all available in-situ observations of
         hydrographic properties onto a regular three-dimensional grid. The result is a set of harmonic constants for the
         yearly and semi-annual components of the variability as well as the all-time mean. The sudden increase in the
-        amount of data provided by the <a href=../profiles/map/latest.html>Argo</a> programme means that the atlas is
+        amount of data provided by the <a href=""../profiles/map/latest.html">Argo</a> programme means that the atlas is
         not really a long-term average so it is best to interpret it as simply an average of all available data, binned
         by time-of-year, but not year itself.
     <dt><a name="CTW"> Coastal Trapped Wave</a>
@@ -74,30 +76,30 @@ include_once("include/header.php");
         veer left in the southern hemisphere, and right in the northern hemisphere.
     <dt><a name="Ekman"> Ekman velocity</a>
     <dd> A steady wind blowing over the open ocean causes the surface layer of water to move at a velocity (called the
-        'Ekman velocity') which is such that the <a href=#Coriolis> Coriolis force</a> on the layer balances the force
+        'Ekman velocity') which is such that the <a href="#Coriolis"> Coriolis force</a> on the layer balances the force
         of the wind. Hence, a wind from the south drives an Ekman velocity towards the west, in the southern hemisphere.
         The thickness of this layer is variable, with 30-50m being fairly typical. The Ekman velocity is additional to
         whatever velocity the surface layer was moving at before the wind commenced, and takes a day or two to settle
         down to being at right angles to the wind. The oscillations that follow a sudden change of the wind stress are
         called inertial oscillations.
     <dt><a name="GSLA"> Gridded Sea Level Anomaly</a>
-    <dd> This is the name used on this website for the gridded maps of <a href=#SLA>Sea Level Anomaly</a> that we make
-        by combining the data from many <a href=#altimeter> altimeters </a> and tide gauges. Being a two-dimensional
-        map, it is possible to use the very simple and surprisingly-accurate <a href=#geostrophic>geostrophic</a>
+    <dd> This is the name used on this website for the gridded maps of <a href="#SLA">Sea Level Anomaly</a> that we make
+        by combining the data from many <a href="#altimeter"> altimeters </a> and tide gauges. Being a two-dimensional
+        map, it is possible to use the very simple and surprisingly-accurate <a href=""#geostrophic">geostrophic</a>
         equations to determine the surface velocity field associated with the surface pressure gradient caused by the
-        gradient of GSLA (as distinct, for example, from the <a href=#ekman>Ekman velocity</a> and the Stokes drift).
-        Most of the graphics, however, show the velocity field determined from <a href=#GSL>Gridded Sea Level</a>.
+        gradient of GSLA (as distinct, for example, from the <a href="#ekman">Ekman velocity</a> and the Stokes drift).
+        Most of the graphics, however, show the velocity field determined from <a href=""#GSL">Gridded Sea Level</a>.
     <dt><a name="GSL"> Gridded Sea Level</a>
     <dd> Gridded Sea Level (GSL) is the name we use for our estimate of the Dynamic Topography obtained by adding the <a
-            href=#CAST2008>CAST2008 Mean Dynamic Topography</a> to <a href=#GSLA>Gridded Sea Level Anomaly (GSLA)</a>.
+            href="#CAST2008">CAST2008 Mean Dynamic Topography</a> to <a href="#GSLA">Gridded Sea Level Anomaly (GSLA)</a>.
         Geostrophic currents computed from GSL include the time-mean and are therefore much more directly comparable
         with in-situ measurements of surface current velocity such as those determined from the trajectories of <a
-            href=#GLD>surface drifters</a>. Why do we need to use CAST2008? While the <a href=#geoid> geoid</a> remains
+            href="#GLD">surface drifters</a>. Why do we need to use CAST2008? While the <a href="#geoid"> geoid</a> remains
         unknown with sufficient spatial resolution, the only way to remove the influence of the geoid from altimetric
         measurements of the Sea Surface Height is to subtract the long-term-mean of the observations, which,
         unfortunately, also subtracts the time-mean component of the Dynamic Topography.
     <dt><a name="geostrophic"> geostrophic </a>
-    <dd> balance of pressure gradient and the <a href=#Coriolis>Coriolis force</a>. In the southern hemisphere, a
+    <dd> balance of pressure gradient and the <a href="#Coriolis">Coriolis force</a>. In the southern hemisphere, a
         northward current is geostrophically balanced by sea level slope rising to the west. Similarly, an
         anti-clockwise rotating body of water, or 'eddy' has elevated sea level in the centre. <b>Slowly-varying</b>
         (ie, over several days and over 'large', e.g. 50km or more, distances) currents are invariably close to being
@@ -126,31 +128,31 @@ include_once("include/header.php");
         response of sea level to fluctuations of local atmospheric pressure.
     <dt><a name="SLA"> Sea Level Anomaly</a>
     <dd>This is the commonly used, abbreviated name for the quantity from which the time-varing component (ie, the
-        'anomaly' or difference from the time-mean) of the <a href=#geostrophic> geostrophic</a> current velocity can be
+        'anomaly' or difference from the time-mean) of the <a href="#geostrophic"> geostrophic</a> current velocity can be
         computed. Sometimes the terms 'subtidal' and 'adjusted' are also pre-pended to make it unambiguous that the
         variations of sea level due, respectively, to the high frequency tides (diurnal, semi-diurnal, ter-diurnal, etc)
-        and <a href=#IB> inverse barometer effect </a> are <b>not</b> included. SLA can be derived from tidegauge and/or
-        altimeter along-track measurements of <a href=#SSH>Sea Surface Height</a>. The very irregular timing and spacing
+        and <a href="#IB"> inverse barometer effect </a> are <b>not</b> included. SLA can be derived from tidegauge and/or
+        altimeter along-track measurements of <a href="#SSH">Sea Surface Height</a>. The very irregular timing and spacing
         of SLA data make it very attractive to use the data after it has been mapped onto a regular grid, interpolated
-        to a point in time. We call this product <a href=#GSLA>Gridded Sea Level Anomaly</a>.
+        to a point in time. We call this product <a href="#GSLA">Gridded Sea Level Anomaly</a>.
     <dt><a name="SSH"> Sea Surface Height</a>
-    <dd>The spatial structure of the Sea Surface Height is mostly due to the undulations of the <a href=#geoid>geoid</a>.
+    <dd>The spatial structure of the Sea Surface Height is mostly due to the undulations of the <a href="#geoid">geoid</a>.
         Only a small part of the variability is due to the mean and time-varying components of the 'dynamic topography'
         associated with ocean circulation. The shape of the geoid is not known precisely, but we can assume that it does
         not vary much with time. The average over time of the altimetric sea surface height (the Mean Sea Surface) is
         the sum of the geoid and the mean dynamic topography. By subtracting the MSS from altimeter measurements of the
         Sea Surface Height we are therefore left with the variable part of the dynamic topography. From this we subtract
-        model estimates of the high frequency signals due to tides and the <a href=#IB>inverse barometer </a> effect,
-        leaving an estimate of the <a href=#SLA>Sea Level Anomaly</a> which can be used to map the time-varying part of
-        the highs and lows of the ocean surface around which the transient component of <a href=#geostrophic>
+        model estimates of the high frequency signals due to tides and the <a href="#IB">inverse barometer </a> effect,
+        leaving an estimate of the <a href="#SLA">Sea Level Anomaly</a> which can be used to map the time-varying part of
+        the highs and lows of the ocean surface around which the transient component of <a href="#geostrophic">
             geostrophic</a> currents flow.
     <dt><a name="SST"> SST </a>
     <dd> Sea Surface Temperature. Usually measured either continuously from ship
-        at the depth of the engine water intake, or remotely by satellite (see <a href=#AVHRR>AVHRR</a>) or airplane.
+        at the depth of the engine water intake, or remotely by satellite (see <a href="#AVHRR">AVHRR</a>) or airplane.
     <dt><a name="synTS"> synTS </a>
     <dd>short for 'synthetic temperature and salinity'. This data product is also described on this website as
-        'Satellite adjusted climatology' as explained at <a href=<?=$BASEDIR ?>profiles/whatsshown.php>[what's shown]<a>. The synTS
-                method is described by <a href=misc/references.htm>Ridgway and Dunn (2010)</a>.
+        'Satellite adjusted climatology' as explained at <a href="<?php echo $BASEDIR ?>profiles/whatsshown.php">[what's shown]</a>. The synTS
+                method is described by <a href="misc/references.htm">Ridgway and Dunn (2010)</a>.
                 <dt><a name="GLD"> Surface Drifter</a>
                 <dd>The principle method for validating our altimetric surface velocity estimates is by comparing them
                     to the velocity of Surface Drifters, or <a href="http://www.aoml.noaa.gov/phod/dac/dacdata.php">Global
@@ -172,7 +174,6 @@ include_once("include/header.php");
                     velocity.
 </dl>
 
-<?
-
+<?php
 include("include/footer.php");
 ?>

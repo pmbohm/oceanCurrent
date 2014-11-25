@@ -10,15 +10,32 @@ The colour palette used in this css
 http://paletton.com/#uid=13t0u0kjDE+9iUue+N7nHx-tnua
 */
 
-/* works with oceancolour.js */
-img.slowLoad {
-    /*display: none;*/
+
+div.mapImage img {
     border-radius: 6px;
     box-shadow: 0 4px 5px 1px #D1D1D1;
     padding: 15px 2px;
+    color: #fff /* hide the alt tag */
 }
 
+.pager li > a, .pager li > span {
+    border-radius: 5px;
+}
 
+.mini-nav > li > a {
+    padding: 5px;
+    font-size: small;
+}
+
+.mapNavbar {
+    padding: 5px 0;
+    min-height: inherit;
+}
+
+.mapPager {
+    margin: 0;
+
+}
 
 h1, h2, h3, h4 {
     font-family: "Oswald", sans-serif;
@@ -118,4 +135,13 @@ a.anchor:after {
     content: " [?] ";
     margin: 3px 0;
     text-decoration: none;
+}
+
+.modal-dialog {
+    margin: 20px;
+    width: inherit;
+}
+
+.modal-body {
+    overflow: scroll;
 }

@@ -1,5 +1,8 @@
 .DS_Store
 originalSite
+.idea
+.idea/*
 originalSite/*
+oceanCurrent.iml
 oceancurrentHTMs
 oceancurrentHTMs/*
