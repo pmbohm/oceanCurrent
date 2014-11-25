@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "IMOS - 404 Page not found";
 include('header.php');
 ?>

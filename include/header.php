@@ -1,4 +1,4 @@
-<?
+<?php
 
 include_once('config.php');
 $BASEDIR = getBaseDir(getcwd(),constant('CONTEXT')); // todo does this work in production??
@@ -13,11 +13,11 @@ $BASEDIR = getBaseDir(getcwd(),constant('CONTEXT')); // todo does this work in p
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="eMII eMarine Information Infrastructure">
-    <link rel="icon" href="<?=$BASEDIR ?>img/IMOSfavicon.ico">
-    <title><? echo $title;
+    <link rel="icon" href="<?php echo $BASEDIR ?>img/IMOSfavicon.ico">
+    <title><?php echo $title;
         echo " IMOS-OceanCurrent" ?></title>
-    <link href="<?=$BASEDIR ?>css/bootstrap.css" rel="stylesheet">
-    <link href="<?=$BASEDIR ?>css/oceancurrent.css" rel="stylesheet">
+    <link href="<?php echo $BASEDIR ?>css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo $BASEDIR ?>css/oceancurrent.css" rel="stylesheet">
     <!--<link href="css/parallax.css" rel="stylesheet"-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -34,7 +34,7 @@ $BASEDIR = getBaseDir(getcwd(),constant('CONTEXT')); // todo does this work in p
                      title="IMOS (Australian Integrated Marine Observing System">
             </a>
             <header>
-                <a class="homelink" href="<?= $BASEDIR ?>index.php" alt="IMOS Ocean Current home page"
+                <a class="homelink" href="<?php echo $BASEDIR ?>index.php" alt="IMOS Ocean Current home page"
                    title="IMOS Ocean Current home page">
                     <h1>IMOS OceanCurrent</h1>
 
@@ -42,7 +42,7 @@ $BASEDIR = getBaseDir(getcwd(),constant('CONTEXT')); // todo does this work in p
                 </a>
                 <h3 class="greyHeader">&#8220; Up to date ocean information around Australia. &#8221;</h3>
             </header>
-            <p><a class="btn btn-primary" href="<?= $BASEDIR ?>news.php" role="button">Latest News &raquo;</a></p>
+            <p><a class="btn btn-primary" href="<?php echo $BASEDIR ?>news.php" role="button">Latest News &raquo;</a></p>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -56,29 +56,29 @@ $BASEDIR = getBaseDir(getcwd(),constant('CONTEXT')); // todo does this work in p
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="navbar-brand" href="<?= $BASEDIR ?>index.php" alt="home page">Home</a>
+                            <li><a class="navbar-brand" href="<?php echo $BASEDIR ?>index.php" alt="home page">Home</a>
                             </li>
-                            <li><a class="navbar-brand" href="<?= $BASEDIR ?>news.php" alt="news items">News</a>
+                            <li><a class="navbar-brand" href="<?php echo $BASEDIR ?>news.php" alt="news items">News</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Information<span
                                         class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="<?= $BASEDIR ?>whatsshown.php" alt="Whats shown">What's
+                                    <li><a href="<?php echo $BASEDIR ?>whatsshown.php" alt="Whats shown">What's
                                             Shown</a></li>
-                                    <li><a href="<?= $BASEDIR ?>profiles/whatsshown.php" alt="Whats shown">What's
+                                    <li><a href="<?php echo $BASEDIR ?>profiles/whatsshown.php" alt="Whats shown">What's
                                             Shown - Profiles</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="<?= $BASEDIR ?>acknowl.php"
+                                    <li><a href="<?php echo $BASEDIR ?>acknowl.php"
                                            alt="Acknowledgements">Acknowledgements</a></li>
-                                    <li><a href="<?= $BASEDIR ?>glossary.php" alt="Glossary">Glossary</a></li>
-                                    <li><a href="<?= $BASEDIR ?>misc/references.php" alt="References">References</a>
+                                    <li><a href="<?php echo $BASEDIR ?>glossary.php" alt="Glossary">Glossary</a></li>
+                                    <li><a href="<?php echo $BASEDIR ?>misc/references.php" alt="References">References</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
-                    </div><? //.navbar-collapse ?>
-                </div><? //.container-fluid ?>
+                    </div><?php //.navbar-collapse ?>
+                </div><?php //.container-fluid ?>
             </nav>
         </div>
     </div>

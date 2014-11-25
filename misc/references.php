@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "References";
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
@@ -33,6 +33,6 @@ include_once("include/header.php");
       <b><i>Schiller, A., P. R. Oke, G. B. Brassington, M. Entel, R. Fiedler, D. A. Griffin, and J. Mansbridge (2008)</i></b> Eddy-resolving ocean circulation in the Asian-Australian region inferred from an ocean reanalysis effort. Progress in Oceanography,76, 334-365. doi:10.1016/j.pocean.2008.01.003.
    </p>
 
-<?
+<?php
 include("include/footer.php");
 ?>

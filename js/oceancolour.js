@@ -24,7 +24,6 @@ function imgSizer() {
         if (width > max_width) {
 
             //Set variables for manipulation
-            var ratio = (max_width / width );
             var new_width = max_width;
 
             //Shrink the image and add link to full-sized image
@@ -50,7 +49,6 @@ function imgSizer() {
     });
 }(jQuery);
 
-
 function setProxiedHtms(attr,val) {
     var data = {'request': attr, 'val': val };
     $.get("proxy.php", data, function (res, status) {
@@ -60,19 +58,18 @@ function setProxiedHtms(attr,val) {
     });
 }
 
-
 // markup local links that go to a place in a local page. using a hash
 // excludes hashes just used as placeholders
 +function ($) {
     $('a').each(function () {
         var href = $(this).attr("href");
-        if (href.indexOf('#') >= 0 && href.length > 3) {
-            $(this).addClass('anchor');
+        if (href) {
+            if (href.indexOf('#') >= 0 && href.length > 3) {
+                $(this).addClass('anchor');
+            }
         }
     });
 }(jQuery);
-
-
 
 //
 /*
