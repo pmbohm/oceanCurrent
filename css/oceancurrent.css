@@ -6,7 +6,7 @@ html, body {
 }
 
 /*
-The colour palette used in this css
+The colour palette used in this css  #428bca
 http://paletton.com/#uid=13t0u0kjDE+9iUue+N7nHx-tnua
 */
 
@@ -34,7 +34,6 @@ div.mapImage img {
 
 .mapPager {
     margin: 0;
-
 }
 
 h1, h2, h3, h4 {
@@ -63,19 +62,11 @@ h1, h2, h3, h4 {
     background-color: #666;
 }
 
-.jumbotron .navbar-container {
-    background-color: #404040;
-    margin-top: 20px;
-    border: 0;
-}
-
-
 .jumbotron h1,
 .jumbotron h2,
 .jumbotron a.homelink {
     color: inherit;
     margin: 0;
-
 }
 
 .jumbotronFooter {
@@ -144,4 +135,19 @@ a.anchor:after {
 
 .modal-body {
     overflow: scroll;
+}
+
+.jumbotron .navbar-ocheader {
+    background-color: #428CCA;
+    margin-top: 20px;
+    margin-bottom: 0;
+    border: 0;
+}
+
+.jumbotron .navbar-ocheader .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-ocheader .navbar-nav > li > a:hover {
+    color: #404040;
 }
