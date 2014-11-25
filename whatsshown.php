@@ -81,7 +81,7 @@ include_once("include/header.php");
     </article>
 
     <article>
-        <h4>Regional maps - left panel FIX THIS <a href="<?php echo $BASEDIR ?>sst.php" class="btn btn-primary inlineButton" type="button">SST Maps <span
+        <h4>Regional maps - left panel FIX THIS<?php // todo ?> <a href="<?php echo $BASEDIR ?>sst.php" class="btn btn-primary inlineButton" type="button">SST Maps <span
                     class="badge">GO</span></a></h4>
         <p>The colour-coded field is a map of tidal-residual, <a href=<?php echo $BASEDIR ?>glossary.htm#isostatic>isostatically-adjusted</a>
             <a href=<?php echo $BASEDIR ?>glossary.htm#GSLA> sea level anomaly</a>, valid for the analysis date <b>T_a</b>
