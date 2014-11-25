@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<? // modal frame for graphs/charts/maps ?>
+<?php // modal frame for graphs/charts/maps ?>
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -40,10 +40,10 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="<?=$BASEDIR ?>js/bootstrap.js"></script>
-<script src="<?=$BASEDIR ?>js/imgLiquid-min.js"></script>
-<script src="<?=$BASEDIR ?>js/maphilight.js"></script>
-<script src="<?=$BASEDIR ?>js/oceancolour.js"></script>
+<script src="<?php echo $BASEDIR ?>js/bootstrap.js"></script>
+<script src="<?php echo $BASEDIR ?>js/imgLiquid-min.js"></script>
+<script src="<?php echo $BASEDIR ?>js/maphilight.js"></script>
+<script src="<?php echo $BASEDIR ?>js/oceancolour.js"></script>
 
 <script>
     +function ($) {
@@ -52,6 +52,6 @@
 </script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="<?=$BASEDIR ?>js/ie10-viewport-bug-workaround.js"></script>
+<script src="<?php echo $BASEDIR ?>js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

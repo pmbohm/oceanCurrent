@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Whats Shown";
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
@@ -8,7 +8,7 @@ include_once("include/header.php");
     <h2>What's shown - Profiles</h2>
     <h3>Argo temperature and salinity down to 2000m depth - What's shown</h3>
     <p>
-        The Argo <a href=<?= $BASEDIR ?>profiles/map/latest.html> [position maps]</a> like the example above show floats that reported data
+        The Argo <a href=<?php echo $BASEDIR ?>profiles/map/latest.html> [position maps]</a> like the example above show floats that reported data
         within
         a few days of the indicated date. The colour-fill of the float indicates the difference between the float's
         estimate
@@ -23,24 +23,24 @@ include_once("include/header.php");
         goes back to 2004. Click on one of the floats to see a plot like the one below (the example is from the float
         coded
         yellow off NSW). You can also reach plots like the one below via the list of <a href=./>[WMO numbers]</a>.
-        <a href="<?=$BASEDIR ?>profiles/map/20110921.html"><img src="<?=$BASEDIR ?>profiles/map/20110921.gif"></a>
+        <a href="<?php echo$BASEDIR ?>profiles/map/20110921.html"><img src="<?php echo$BASEDIR ?>profiles/map/20110921.gif"></a>
     </p>
     <h4>Plot title</h4>
     <p>The title of the example plot specifies three data sources:</p>
-    <a href="<?=$BASEDIR ?>profiles/5903622/20110916_5903622_44_0917.html">
-            <img src="<?=$BASEDIR ?>profiles/5903622/20110916_5903622_44_0917.gif"> </a>
+    <a href="<?php echo$BASEDIR ?>profiles/5903622/20110916_5903622_44_0917.html">
+            <img src="<?php echo$BASEDIR ?>profiles/5903622/20110916_5903622_44_0917.gif"> </a>
     <ol>
         <li>The Argo profile is the 44th cycle of the float with WMO number 5903622. The 'CS' signifies that the data
             was processed by CSIRO. The sampling occurred on 16/09/2011, and the data shown was distributed as profile
             424 of the Fast Delivery dataset for 17/09/2011. The surfacing position was 32.508S, 155.613E.
         <li>The seasonal ocean climatology to which the Argo data is compared is <a
                 href=http://www.marine.csiro.au/~dunn/cars2009/>CARS2009</a>.
-        <li>The daily-updated <a href="<?=$BASEDIR ?>glossary.php#synTS">'synTS'</a> estimate of subsurface properties to
+        <li>The daily-updated <a href="<?php echo$BASEDIR ?>glossary.php#synTS">'synTS'</a> estimate of subsurface properties to
             which the Argo data is compared is valid for 17/09/2011, which is a day later than the Argo data. The line
             colour key refers to this as 'satellite-adjusted climatology' because the estimates are the result of using
             satellite observations of the sea surface height and temperature (shown at right) to adjust the
             climatological profile, according to historically-observed relationships between anomalies of surface
-            dynamic height and temperature with sub-surface properties (see <a href="<?=$BASEDIR ?>misc/references.php"> Ridgway and
+            dynamic height and temperature with sub-surface properties (see <a href="<?php echo$BASEDIR ?>misc/references.php"> Ridgway and
                 Dunn, 2010</a>).
     </ol>
     <p>
@@ -85,8 +85,8 @@ include_once("include/header.php");
         This water has come from Bass Strait. Bass Strait water is rarely seen in vertical profiles in the western
         Tasman Sea (only 7 examples from 2420 profiles since 1982) because the water forms 200 m+ tall lenses at the
         centre of anti-cyclones (Baird and Ridgway, 2012).<br>
-        <a href="<?=$BASEDIR ?>profiles/5903677/20110725_5903677_12_0723.html">
-            <img src="<?=$BASEDIR ?>profiles/5903677/20110725_5903677_12_0723.gif"></a>
+        <a href="<?php echo$BASEDIR ?>profiles/5903677/20110725_5903677_12_0723.html">
+            <img src="<?php echo$BASEDIR ?>profiles/5903677/20110725_5903677_12_0723.gif"></a>
     </p>
     <p>
         <h5>Example 3: disagreement of Argo and synTS</h5>
@@ -100,8 +100,8 @@ include_once("include/header.php");
         velocity with the trajectory and speed of a surface drifter <a href=""../LordHoweS/2011091903.html">[snapshot SST,
             altimetry and drifter]</a>.
 
-    <a href="<?=$BASEDIR ?>profiles/5901658/20110919_5901658_126_0920.html">
-        <img src="<?=$BASEDIR ?>profiles/5901658/20110919_5901658_126_0920.gif"></a>
+    <a href="<?php echo$BASEDIR ?>profiles/5901658/20110919_5901658_126_0920.html">
+        <img src="<?php echo$BASEDIR ?>profiles/5901658/20110919_5901658_126_0920.gif"></a>
     </p>
 
 

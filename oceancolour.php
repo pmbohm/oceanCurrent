@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Ocean colour products";
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
@@ -52,6 +52,6 @@ include_once("include/header.php");
             </div>
         </div>
     </div>
-<?
+<?php
 include_once("include/footer.php");
 ?>

@@ -8,7 +8,7 @@ include_once("include/header.php");
 
    Use layout components from http://getbootstrap.com/css/#grid
    Any relative links (not in the same directory as the templated file) should be prepended with
-   <? /* echo $BASEDIR */ ?>
+   <?php /* echo $BASEDIR */ ?>
 
 -->
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Acknowledgements";
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
@@ -64,6 +64,6 @@ include_once("include/header.php");
         without which this service would not be possible.
     </p>
 </div>
-<?
+<?php
 include('include/footer.php');
 ?>

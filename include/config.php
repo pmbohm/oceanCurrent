@@ -1,6 +1,6 @@
-<?
+<?php
 
-ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
+//ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 /*
  * todo see: string set_include_path ( string $new_include_path )
  * Sets the include_path configuration option for the duration of the script.
