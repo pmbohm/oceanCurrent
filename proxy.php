@@ -10,43 +10,59 @@ ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get
 require_once('Template.php');
 require_once('include/config.php');
 
-if ($_GET && $_GET['request'] && $_GET['val']) {
+if ($_GET && $_GET['relUrl']) {
 
-    $url = getFullUrlFromParams($_GET['val']);
+    $url = getFullUrlFromParams($_GET['relUrl']);
+//    print_r($_GET['relUrl']);
+//    print_r("<BR>");
+//    print_r($url);
     $res = doCurlRequest($url);
 
-     if ($_GET['request'] == "latest") {
-         parseLatestHtmlResults($res, $url);
-     }
-     elseif ($_GET['request'] == "index"){
-         parseIndexHtmlResults($res, $url);
-     }
+    if (strpos($_GET['relUrl'], '.htm') !== false) {
+        parseLatestHtmlResults($res);
+    } else {
+        parseIndexHtmlResults($res);
+    }
 }
 
 function getFullUrlFromParams($val) {
-    $fullUrlArray = array(constant('BASEURL'), $BASEDIR, urldecode($val));
+    $fullUrlArray = array(
+        constant('BASEURL'),
+        $BASEDIR,
+        urldecode($val)
+    );
     return implode("/", array_filter($fullUrlArray));
 }
 
 function parseLatestHtmlResults($res) {
+
     if (DEBUG == 1) {
         $debug = "<code>\n";
         $debug .= nl2br(htmlspecialchars($res)) . "\n\n";
         $debug .= "</code><BR><BR>\n\n\n";
     }
 
-    $resArray = explode("\n", $res);
-
     // find the image
     preg_match('/src=(.*?)>/', $res, $imgFilename);
     if (strlen($imgFilename[1]) > 0) {
-        $urlArray = array(constant('BASEURL'), getFolderName(), $imgFilename[1]);
+        $urlArray = array(
+            constant('BASEURL'),
+            getRelativeFolderPath(),
+            $imgFilename[1]
+        );
         $imageUrl = implode("/", array_filter($urlArray));
     } else {
-        $urlArray = array(constant('BASEURL'), getFolderName(), $imgFilename[1]);
+        $urlArray = array(
+            constant('BASEURL'),
+            getRelativeFolderPath(),
+            $imgFilename[1]
+        );
         $error = "Graph not found at: " . implode("/", array_filter($urlArray));
     }
+    array_pop($urlArray);
+    $baseFolderUrl = implode("/", array_filter($urlArray)) . "/";
 
+    $resArray = explode("\n", $res);
     // find the links to the nearest files
     foreach ($resArray as $line) {
         if (preg_match('/PREV/', $line)) {
@@ -57,14 +73,17 @@ function parseLatestHtmlResults($res) {
         }
     }
 
-    $data = array('debug' => $debug,
-        'folderName' => getFolderName(),
+    $data = array(
+        'debug' => $debug,
+        'relativeFolderPath' => getRelativeFolderPath(),
+        'regionalMap' => isRegionalMap(),
         'imageUrl' => $imageUrl,
         'previous' => $previous[1],
         'next' => $next[1],
         'imgNameDate' => formatFilenameAsDate($imgFilename[1]),
         'error' => $error,
-        'datePickerUrl' => "proxy.php?index=".getFolderName()
+        'baseFolderUrl' => $baseFolderUrl,
+        'datePickerUrl' => getRelativeFolderPath()
     );
     $tmpl = new Template('views/proxyLatestHtmlTpl.php', $data);
     echo $tmpl->render();
@@ -78,43 +97,106 @@ function parseIndexHtmlResults($res) {
         $debug .= "</code><BR><BR>\n\n\n";
     }
 
+    // fix this apparent closing tag EG: <a href=2012/>[2012]</a>
+    // as they break strip_tags
+    $res = str_replace("/>", ">", $res);
+
+    // limit content to anchors and bold tags to clear crud
+    $res = strip_tags($res, "<a><b>");
+
+    // make bold tags into H3's
+    $res = str_replace("b>", "h3>", $res);
+
+    // now remove lines that ...
+    $endOfLine = "\n";
+    $lines = explode($endOfLine, $res);
+    $array[] = null;
+
+    foreach ($lines as $string) {
+
+        // have a reference to index.htm
+        if (preg_match('/index/i', $string)) {
+            continue;
+        }
+        // have a reference to oceancurrent
+        if (preg_match('/oceancurrent/i', $string)) {
+            continue;
+        }
+        // not nested in a tag. (strip_tags leaves content orphaned)
+        if (!preg_match("%<.*?>%", $string)) {
+            continue;
+        }
+
+        array_push($array, $string);
+    }
+
+    $res = implode($endOfLine, $array);
+
     $data = array(
-        'debug' => $debug
+        'debug' => $debug,
+        'relativeFolderPath' => getRelativeFolderPath(),
+        //'parentRelativeFolderPath' => getParentRelativeFolder(),
+        'regionalMap' => isRegionalMap(),
+        'html' => $res
     );
     $tmpl = new Template('views/proxyIndexHtmlTpl.php', $data);
     echo $tmpl->render();
-
 }
-function getFolderName() {
-    // strip off the filename
-    $pathArray = explode("/", urldecode($_GET['val']));
-    array_pop($pathArray);
+
+//function getParentRelativeFolder() {
+//    $pathArray = getPathArray();
+//    //if the last item is a file strip it off
+//    $filename = $pathArray[count($pathArray)-1];
+//    if (pathinfo($filename, PATHINFO_EXTENSION)) {
+//        array_pop($pathArray);
+//    }
+//    if (count($pathArray) > 0) {
+//        return $pathArray[0];
+//    }
+//}
+
+function getRelativeFolderPath() {
+
+    $pathArray = getPathArray();
+    //if the last item is a file strip it off
+    $filename = $pathArray[count($pathArray)-1];
+    if (pathinfo($filename, PATHINFO_EXTENSION)) {
+        array_pop($pathArray);
+    }
     return implode("/", $pathArray);
+}
+
+function getPathArray() {
+    return explode("/", urldecode($_GET['relUrl']));
+}
+
+function isRegionalMap() {
+    return ($_GET['regionalMap'] == "true");
 }
 
 function formatFilenameAsDate($filename) {
 
     $possibleDate = stripExtension($filename);
-    $inputDateFormats = array("YmdG","Ymd");
-    $outputDateFormats = array("(%s/%s/%s %s:00 Z)","(%s/%s/%s)"); // formats used by David
+    $inputDateFormats = array(
+        "YmdG",
+        "Ymd"
+    );
+    $outputDateFormats = array(
+        "(%s/%s/%s %s:00 Z)",
+        "(%s/%s/%s)"
+    ); // formats used by David
     $len = count($inputDateFormats);
 
-
     for ($i = 0; $i < $len; $i++) {
-        $dateArray = date_parse_from_format( $inputDateFormats[$i] , $possibleDate );
+        $dateArray = date_parse_from_format($inputDateFormats[$i], $possibleDate);
         $outputDateFormat = $outputDateFormats[$i];
-        if ($dateArray[error_count] == 0) {
+        if ($dateArray['error_count'] == 0) {
             $i = $len;
         }
     }
 
-    if ($dateArray[error_count] == 0) {
-        $res = sprintf($outputDateFormat,
-            $dateArray[year],
-            $dateArray[month],
-            $dateArray[day],
-            $dateArray[hour]
-        );
+    if ($dateArray['error_count'] == 0) {
+        $res = sprintf($outputDateFormat, $dateArray['year'], $dateArray['month'], $dateArray['day'], $dateArray['hour']);
         return $res;
     }
 }
@@ -141,6 +223,7 @@ function doCurlRequest($url) {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data_str);
     }
 
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
     header('Content-Type: text/html');
@@ -148,9 +231,7 @@ function doCurlRequest($url) {
     // Check if any error occurred
     if (curl_errno($ch)) {
         //$info = curl_getinfo($ch);
-        //print_r($info);
-    }
-    else {
+    } else {
         return $result;
     }
 

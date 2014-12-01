@@ -43,17 +43,57 @@ function imgSizer() {
 +function ($) {
     // area image maps intercept and send to our proxy
     $('area').each(function () {
-        $(this).attr("href", function (index, old) {
-            $(this).attr("onclick", "setProxiedHtms('latest','" + encodeURIComponent(old) + "');return false;");
-        });
+        setProxiedHtmOnClickAction($(this));
     });
+
 }(jQuery);
 
-function setProxiedHtms(attr,val) {
-    var data = {'request': attr, 'val': val };
-    $.get("proxy.php", data, function (res, status) {
-        if (status == "success") {
-            $('#proxiedPagesContainer').html(res);
+function setProxiedHtmOnClickAction(thisAnchorId, folderName) {
+
+    var isARegionalMap = thisAnchorId.attr("region"); // todo these tags need to be added to be appropriate <area> tags
+    folderName = (folderName != '') ? folderName: undefined;
+
+    thisAnchorId.attr("href", function (index, theHref) {
+
+        var vals = [folderName, theHref].filter(function(n){ return n != undefined }); // clears out undefined
+
+        var relUrl = vals.join("/");
+        if (relUrl.indexOf('..') >= 0) {
+            relUrl = getAbsolutePath("", relUrl); // todo tydy this and provide a link to the 'latest'
+            console.log("todo provide a link to the latest!!");
+        }
+
+        thisAnchorId.attr("onclick", "setProxiedHtms('" + encodeURIComponent(relUrl) + "','" + isARegionalMap + "');return false;");
+
+    });
+}
+
+// http://stackoverflow.com/questions/14780350/convert-relative-path-to-absolute-using-javascript
+function getAbsolutePath(base, relative) {
+    var stack = base.split("/");
+    var parts = relative.split("/");
+    stack.pop(); // remove current file name (or empty string)
+                 // (omit if "base" is the current folder without trailing slash)
+    for (var i=0; i<parts.length; i++) {
+        if (parts[i] == ".")
+            continue;
+        if (parts[i] == "..")
+            stack.pop();
+        else
+            stack.push(parts[i]);
+    }
+    return stack.join("/");
+}
+
+function setProxiedHtms(relUrl,region) {
+    var data = {'relUrl': relUrl, 'regionalMap': region };
+    $.ajax({
+        url: "proxy.php",
+        data: data,
+        success: function (res, status) {
+            if (status == "success") {
+                $('#proxiedPagesContainer').html(res);
+            }
         }
     });
 }
