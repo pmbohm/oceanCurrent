@@ -3,10 +3,12 @@ $title = "Ocean colour products";
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
 ?>
-
+    <div class="row">
+        <h3 class="highlightedHeader" >Prepared maps and animations</h3>
+    </div>
     <div class="row">
         <div class="col-md-4">
-            <h3>Prepared maps and animations</h3>
+
             <map name="imapchl">
                 <area shape="rect" coords="4  63  35  89" href="Ningaloo_chl/latest.html" title="Ningaloo">
                 <area shape="rect" coords="-4   89   17  130" href="Perth_chl/latest.html" title="Perth">

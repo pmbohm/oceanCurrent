@@ -1,7 +1,7 @@
 <?php
 
 include_once('config.php');
-$BASEDIR = getBaseDir(getcwd(),constant('CONTEXT')); // todo does this work in production??
+$BASEDIR = getBaseDir(getcwd(), constant('CONTEXT')); // todo does this work in production??
 
 ?>
 
@@ -42,46 +42,66 @@ $BASEDIR = getBaseDir(getcwd(),constant('CONTEXT')); // todo does this work in p
                 </a>
                 <h3 class="highlightedHeader">&#8220; Up to date ocean information around Australia. &#8221;</h3>
             </header>
-            <p><a class="btn btn-primary" href="<?php echo $BASEDIR ?>news.php" role="button">Latest News &raquo;</a></p>
+            <p><a class="btn btn-primary" href="<?php echo $BASEDIR ?>news.php" role="button">Latest News &raquo;</a>
+            </p>
         </div>
-
         <nav class="navbar navbar-default navbar-ocheader" role="navigation">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <ul class="nav navbar-nav">
-                            <li><a class="navbar-active" href="http://imos.org.au" alt="IMOS home page">IMOS</a></li>
-                            <li><a class="navbar-active" href="http://portal.imos.org.au" alt="IMOS ocean portal">
-                                    IMOS Ocean Portal</a></li>
-                        </ul>
-                    </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a class="navbar-brand" href="<?php echo $BASEDIR ?>index.php" alt="home page">Home</a>
-                            </li>
-                            <li><a class="navbar-brand" href="<?php echo $BASEDIR ?>news.php" alt="news items">News</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Information<span
-                                        class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="<?php echo $BASEDIR ?>whatsshown.php" alt="Whats shown">What's
-                                            Shown</a></li>
-                                    <li><a href="<?php echo $BASEDIR ?>profiles/whatsshown.php" alt="Whats shown">What's
-                                            Shown - Profiles</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="<?php echo $BASEDIR ?>acknowl.php"
-                                           alt="Acknowledgements">Acknowledgements</a></li>
-                                    <li><a href="<?php echo $BASEDIR ?>glossary.php" alt="Glossary">Glossary</a></li>
-                                    <li><a href="<?php echo $BASEDIR ?>misc/references.php" alt="References">References</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><?php //.navbar-collapse ?>
-                </div><?php //.container ?>
-            </nav>
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="mainNavbar" >
+                    <ul class="nav navbar-nav ">
+                        <li><a class="navbar-brand" href="<?php echo $BASEDIR ?>index.php" alt="home page">Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?php echo $BASEDIR ?>sst.php" alt="Sea Surface Temperature">Sea
+                                        Surface Temperature</a></li>
+                                <li><a href="<?php echo $BASEDIR ?>oceancolour.php" alt="Ocean Colour">Ocean Colour</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="" href="<?php echo $BASEDIR ?>news.php" alt="news items">News</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Information<span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?php echo $BASEDIR ?>whatsshown.php" alt="Whats shown">What's
+                                        Shown</a></li>
+                                <li><a href="<?php echo $BASEDIR ?>profiles/whatsshown.php" alt="Whats shown">What's
+                                        Shown - Profiles</a></li>
+                                <li class="divider"></li>
+                                <li><a href="<?php echo $BASEDIR ?>acknowl.php"
+                                       alt="Acknowledgements">Acknowledgements</a></li>
+                                <li><a href="<?php echo $BASEDIR ?>glossary.php" alt="Glossary">Glossary</a></li>
+                                <li><a href="<?php echo $BASEDIR ?>misc/references.php"
+                                       alt="References">References</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="navbar-active" href="http://imos.org.au" alt="IMOS home page">IMOS</a></li>
+                        <li><a class="navbar-active" href="http://portal.imos.org.au" alt="IMOS ocean portal">
+                                IMOS Ocean Portal</a></li>
+                    </ul>
+                </div><?php //.navbar-collapse ?>
+
+
+            </div><?php //.container ?>
+        </nav>
     </div>
     <div class="whiteWrapper">
         <div class="container">
