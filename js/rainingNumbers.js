@@ -19,7 +19,7 @@ function rainingNumbers(containerId) {
     var font_size = 9;
     var columns = c.width / font_size; //number of columns for the rain
     //an array of drops - one per column
-    var drops = [];
+    var drops = array();
     //x below is the x coordinate
     //1 = y co-ordinate of the drop(same for every drop initially)
     for (var x = 0; x < columns; x++)

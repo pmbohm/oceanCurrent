@@ -204,7 +204,7 @@ function formatFilenameAsDate($filename) {
 function doCurlRequest($url) {
 
     $headers = getallheaders();
-    $headers_str = [];
+    $headers_str = array();
 
     $method = $_SERVER['REQUEST_METHOD'];
 
