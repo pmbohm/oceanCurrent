@@ -59,7 +59,7 @@ function setProxiedHtmOnClickAction(thisAnchorId, folderName) {
 
         var relUrl = vals.join("/");
         if (relUrl.indexOf('..') >= 0) {
-            relUrl = getAbsolutePath("", relUrl); // todo tydy this and provide a link to the 'latest'
+            relUrl = getAbsolutePath("", relUrl); // todo tidy this and provide a link to the 'latest'
             console.log("todo provide a link to the latest!!");
         }
 

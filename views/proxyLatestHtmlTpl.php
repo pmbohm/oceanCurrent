@@ -5,13 +5,8 @@
    // <area title="uv" href="uv/latest.html" coords="118,111,205,144" shape="rect" region="true"
    //
 ?>
-<?php if ($regionalMap) { ?>
-    <h3>Map of the '<?php echo $relativeFolderPath ?>' region. <span><?php echo $imgNameDate ?></span></h3>
-<?php
-} else {
-    ?>
-    <h3>Map of '<?php echo $relativeFolderPath ?>' <span><?php echo $imgNameDate ?></span></h3>
-<?php } ?>
+<div class="voffset4"></div>
+<h5><?php echo $imgNameDate ?></h5>
 
 <nav class="navbar navbar-default mapNavbar" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->

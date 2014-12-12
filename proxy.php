@@ -135,25 +135,12 @@ function parseIndexHtmlResults($res) {
     $data = array(
         'debug' => $debug,
         'relativeFolderPath' => getRelativeFolderPath(),
-        //'parentRelativeFolderPath' => getParentRelativeFolder(),
         'regionalMap' => isRegionalMap(),
         'html' => $res
     );
     $tmpl = new Template('views/proxyIndexHtmlTpl.php', $data);
     echo $tmpl->render();
 }
-
-//function getParentRelativeFolder() {
-//    $pathArray = getPathArray();
-//    //if the last item is a file strip it off
-//    $filename = $pathArray[count($pathArray)-1];
-//    if (pathinfo($filename, PATHINFO_EXTENSION)) {
-//        array_pop($pathArray);
-//    }
-//    if (count($pathArray) > 0) {
-//        return $pathArray[0];
-//    }
-//}
 
 function getRelativeFolderPath() {
 
@@ -182,8 +169,8 @@ function formatFilenameAsDate($filename) {
         "Ymd"
     );
     $outputDateFormats = array(
-        "(%s/%s/%s %s:00 Z)",
-        "(%s/%s/%s)"
+        "%s/%s/%s %s:00 Z",
+        "%s/%s/%s"
     ); // formats used by David
     $len = count($inputDateFormats);
 
