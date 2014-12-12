@@ -103,8 +103,9 @@ function setProxiedHtms(relUrl,region) {
 +function ($) {
     $('a').each(function () {
         var href = $(this).attr("href");
+        var notBootstrap = $(this).attr("data-toggle") == undefined;
         if (href) {
-            if (href.indexOf('#') >= 0 && href.length > 3) {
+            if (href.indexOf('#') >= 0 && href.length > 3 && notBootstrap) {
                 $(this).addClass('anchor');
             }
         }
