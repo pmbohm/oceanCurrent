@@ -10,6 +10,16 @@ The colour palette used in this css  #428bca
 http://paletton.com/#uid=13t0u0kjDE+9iUue+N7nHx-tnua
 */
 
+.voffset  { margin-top: 2px; }
+.voffset1 { margin-top: 5px; }
+.voffset2 { margin-top: 10px; }
+.voffset3 { margin-top: 15px; }
+.voffset4 { margin-top: 30px; }
+.voffset5 { margin-top: 40px; }
+.voffset6 { margin-top: 60px; }
+.voffset7 { margin-top: 80px; }
+.voffset8 { margin-top: 100px; }
+.voffset9 { margin-top: 150px; }
 
 div.mapImage img {
     border-radius: 6px;
@@ -150,4 +160,9 @@ a.anchor:after {
 
 .navbar-ocheader .navbar-nav > li > a:hover {
     color: #404040;
+}
+
+/* accordians */
+.panel-heading {
+    cursor: pointer;
 }
