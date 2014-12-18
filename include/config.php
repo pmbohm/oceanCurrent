@@ -10,6 +10,8 @@
 //error_reporting(E_ALL);
 //ini_set('display_errors', 0);
 
+date_default_timezone_set('Australia/Hobart'); //required by PHP date function
+
 define("CONTEXT", "OceanCurrent");
 //define("DEBUG", true); // used in proxy.php
 define("ENVIRONMENT", "development"); // used in proxy.php

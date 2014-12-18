@@ -58,9 +58,8 @@ function setProxiedHtmOnClickAction(thisAnchorId, folderName) {
         var vals = [folderName, theHref].filter(function(n){ return n != undefined }); // clears out undefined
 
         var relUrl = vals.join("/");
-        if (relUrl.indexOf('..') >= 0) {
-            relUrl = getAbsolutePath("", relUrl); // todo tidy this and provide a link to the 'latest'
-            console.log("todo provide a link to the latest!!");
+        if (relUrl.indexOf('../') >= 0) {
+            relUrl = getAbsolutePath("", relUrl);
         }
 
         thisAnchorId.attr("onclick", "setProxiedHtms('" + encodeURIComponent(relUrl) + "','" + isARegionalMap + "');return false;");
@@ -72,10 +71,11 @@ function setProxiedHtmOnClickAction(thisAnchorId, folderName) {
 function getAbsolutePath(base, relative) {
     var stack = base.split("/");
     var parts = relative.split("/");
-    stack.pop(); // remove current file name (or empty string)
-                 // (omit if "base" is the current folder without trailing slash)
+    stack.pop();
+    // remove current file name (or empty string)
+    // (omit if "base" is the current folder without trailing slash)
     for (var i=0; i<parts.length; i++) {
-        if (parts[i] == ".")
+        if (parts[i] == "." || parts[i] == "")
             continue;
         if (parts[i] == "..")
             stack.pop();
@@ -86,6 +86,7 @@ function getAbsolutePath(base, relative) {
 }
 
 function setProxiedHtms(relUrl,region) {
+
     var data = {'relUrl': relUrl, 'regionalMap': region };
     $.ajax({
         url: "proxy.php",

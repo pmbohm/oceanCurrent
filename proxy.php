@@ -13,9 +13,6 @@ require_once('include/config.php');
 if ($_GET && $_GET['relUrl']) {
 
     $url = getFullUrlFromParams($_GET['relUrl']);
-//    print_r($_GET['relUrl']);
-//    print_r("<BR>");
-//    print_r($url);
     $res = doCurlRequest($url);
 
     if (strpos($_GET['relUrl'], '.htm') !== false) {
@@ -116,10 +113,20 @@ function parseIndexHtmlResults($res) {
 
         // have a reference to index.htm
         if (preg_match('/index/i', $string)) {
-            continue;
+            if (!preg_match('/oceancurrent/i', $string)) {
+                $todaysYear = date("Y");
+                $string = "<a href=\"../\" >[$todaysYear]</a>";
+            }
+            else {
+                continue;
+            }
         }
         // have a reference to oceancurrent
         if (preg_match('/oceancurrent/i', $string)) {
+            continue;
+        }
+        // have an unwanted title
+        if (preg_match('/----/i', $string)) {
             continue;
         }
         // not nested in a tag. (strip_tags leaves content orphaned)
@@ -135,7 +142,6 @@ function parseIndexHtmlResults($res) {
     $data = array(
         'debug' => $debug,
         'relativeFolderPath' => getRelativeFolderPath(),
-        'regionalMap' => isRegionalMap(),
         'html' => $res
     );
     $tmpl = new Template('views/proxyIndexHtmlTpl.php', $data);
