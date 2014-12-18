@@ -3,6 +3,8 @@
 include_once('config.php');
 $BASEDIR = getBaseDir(getcwd(), constant('CONTEXT')); // todo does this work in production??
 
+$isIndex = basename($_SERVER["SCRIPT_FILENAME"]) == "index.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +20,6 @@ $BASEDIR = getBaseDir(getcwd(), constant('CONTEXT')); // todo does this work in 
         echo " IMOS-OceanCurrent" ?></title>
     <link href="<?php echo $BASEDIR ?>css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo $BASEDIR ?>css/oceancurrent.css" rel="stylesheet">
-    <!--<link href="css/parallax.css" rel="stylesheet"-->
-
     <script src="<?php echo $BASEDIR ?>js/jquery-1.11.1.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,27 +28,39 @@ $BASEDIR = getBaseDir(getcwd(), constant('CONTEXT')); // todo does this work in 
     <![endif]-->
 </head>
 <body>
-    <div class="jumbotron">
-        <div class="container">
-            <a href="http://www.imos.org.au/">
-                <img id="IMOSLogo" class="floatRight"
-                     src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png"
-                     title="IMOS (Australian Integrated Marine Observing System">
-            </a>
-            <header>
-                <a class="homelink" href="<?php echo $BASEDIR ?>index.php" alt="IMOS Ocean Current home page"
-                   title="IMOS Ocean Current home page">
-                    <h1>IMOS OceanCurrent</h1>
-
-                    <h2><span></span>Surface Currents and Temperature</h2>
-                </a>
-                <h3 class="highlightedHeader">&#8220; Up to date ocean information around Australia. &#8221;</h3>
-            </header>
-            <!--p><a class="btn btn-primary" href="<?php echo $BASEDIR ?>news.php" role="button">Latest News &raquo;</a>
-            </p-->
-        </div>
-        <nav class="navbar navbar-default navbar-ocheader" role="navigation">
+    <?php if ($isIndex) { ?>
+        <div class="jumbotron">
             <div class="container">
+                <a href="http://www.imos.org.au/">
+                    <img id="IMOSLogo" class="floatRight"
+                         src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png"
+                         title="IMOS (Australian Integrated Marine Observing System">
+                </a>
+                <header>
+                    <a class="homelink" href="<?php echo $BASEDIR ?>index.php" alt="IMOS Ocean Current home page"
+                       title="IMOS Ocean Current home page">
+                        <h1>IMOS OceanCurrent</h1>
+
+                        <h2><span></span>Surface Currents and Temperature</h2>
+                    </a>
+                    <h3 class="highlightedHeader">&#8220; Up to date ocean information around Australia. &#8221;</h3>
+                </header>
+            </div>
+        </div>
+    <?php } // end if ?>
+    <div class="jumbotronNav">
+        <nav class="navbar navbar-default navbar-ocheader" role="navigation">
+
+            <div class="container">
+                <?php if (!$isIndex) { ?>
+                    <div class="miniHeader">
+                        <h3>Ocean Current</h3><a href="http://www.imos.org.au/">
+                            <img id="IMOSLogo" class="floatLeft"
+                                 src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png"
+                                 title="IMOS (Australian Integrated Marine Observing System">
+                        </a>
+                    </div>
+                <?php } ?>
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">

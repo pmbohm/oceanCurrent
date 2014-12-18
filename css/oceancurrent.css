@@ -90,7 +90,7 @@ h1, h2, h3, h4 {
     color: black;
 }
 
-.jumbotron, .jumbotronFooter {
+.jumbotron, .jumbotronFooter, .jumbotronNav {
     background-color: #666;
 }
 
@@ -131,10 +131,8 @@ ul.arrowed li:before {
     color: #999;
 }
 
-.jumbotron .navbar a + a:before {
-    content: " | ";
-    margin-right: 10px;
-    text-decoration: none;
+.floatLeft {
+    float: left;
 }
 
 .floatRight {
@@ -169,20 +167,39 @@ a.anchor:after {
     overflow: hidden;
 }
 
-.jumbotron .navbar-ocheader {
+.jumbotronNav .navbar a + a:before {
+    content: " | ";
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.jumbotronNav .navbar-ocheader {
     background-color: #428CCA;
-    margin-top: 20px;
-    margin-bottom: 0;
+    margin: 10px 0;
     border: 0;
 }
 
-.jumbotron .navbar-ocheader .navbar-nav > li > a {
+.jumbotronNav .navbar-ocheader .navbar-nav > li > a {
     color: white;
 }
 
 .navbar-ocheader .navbar-nav > li > a:hover {
     color: #404040;
 }
+
+.miniHeader {
+    padding-left: 15px;
+}
+
+.miniHeader h3  {
+    display: inline;
+    float: left;
+}
+
+.miniHeader img  {
+    height: 50px
+}
+
 
 /* accordians */
 .panel-heading {
