@@ -79,6 +79,7 @@ function parseLatestHtmlResults($res) {
         'next' => $next[1],
         'imgNameDate' => formatFilenameAsDate($imgFilename[1]),
         'error' => $error,
+        'popup' => ($_GET['popup']) ?: 'false',
         'baseFolderUrl' => $baseFolderUrl,
         'datePickerUrl' => getRelativeFolderPath()
     );

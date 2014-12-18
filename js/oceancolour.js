@@ -2,17 +2,10 @@ if (typeof jQuery === 'undefined') {
     throw new Error('Bootstrap\'s JavaScript requires jQuery')
 }
 
-function setModelImageUrl(imgUrl) {
-    $('#basicModal #fullImage')
-        .attr('src', imgUrl)
-        .attr('alt', imgUrl)
-        .attr('title', imgUrl);
-    $('#basicModal #fullImageLabel').html(imgUrl);
-}
+var session = {'forceFit': 'off'};
 
 // resize large maps to fit container
-function imgSizer() {
-    var selectorContainer = "div#proxiedPagesContainer";
+function imgSizer(selectorContainer) {
     var max_width = $(selectorContainer).width();
     var selector = 'div#proxiedPagesContainer > div.mapImage img';
 
@@ -25,7 +18,6 @@ function imgSizer() {
 
             //Set variables for manipulation
             var new_width = max_width;
-
             //Shrink the image and add link to full-sized image
             $(this).animate(
                 {width: new_width},
@@ -40,6 +32,39 @@ function imgSizer() {
     });
 }
 
+function setForceFit(value) {
+    session.forceFit = (value) ? "on" : "off";
+}
+
+function createForceFitToggle() {
+    $('#forceFitToggle').bootstrapToggle({
+        'size': 'mini'
+    });
+    $('#forceFitToggle').bootstrapToggle(session.forceFit); // set the state
+    $('#forceFitToggle').change(function() {
+        setForceFit($(this).prop('checked'));
+        fitModal2Window();
+    });
+}
+
+function fitModal2Window() {
+    if (session.forceFit == "on") {
+        $('.modal-body').css('height', $(window).height() - 100); // set immediately
+        // set on show
+        $('#featuredMapModal').on('show.bs.modal', function () {
+            $('.modal-body').css('height', $(window).height() - 100);
+        });
+        $('#featuredMapModal .modal-content .modal-body img').attr("height", "100%");
+    }
+    else {
+        $('#featuredMapModal .modal-content .modal-body img').removeAttr("height");
+        $('.modal-body').css('height','');
+        console.log(session.forceFit);
+    }
+
+
+}
+
 +function ($) {
     // area image maps intercept and send to our proxy
     $('area').each(function () {
@@ -51,11 +76,13 @@ function imgSizer() {
 function setProxiedHtmOnClickAction(thisAnchorId, folderName) {
 
     var isARegionalMap = thisAnchorId.attr("region"); // todo these tags need to be added to be appropriate <area> tags
-    folderName = (folderName != '') ? folderName: undefined;
+    folderName = (folderName != '') ? folderName : undefined;
 
     thisAnchorId.attr("href", function (index, theHref) {
 
-        var vals = [folderName, theHref].filter(function(n){ return n != undefined }); // clears out undefined
+        var vals = [folderName, theHref].filter(function (n) {
+            return n != undefined
+        }); // clears out undefined
 
         var relUrl = vals.join("/");
         if (relUrl.indexOf('../') >= 0) {
@@ -74,7 +101,7 @@ function getAbsolutePath(base, relative) {
     stack.pop();
     // remove current file name (or empty string)
     // (omit if "base" is the current folder without trailing slash)
-    for (var i=0; i<parts.length; i++) {
+    for (var i = 0; i < parts.length; i++) {
         if (parts[i] == "." || parts[i] == "")
             continue;
         if (parts[i] == "..")
@@ -85,9 +112,9 @@ function getAbsolutePath(base, relative) {
     return stack.join("/");
 }
 
-function setProxiedHtms(relUrl,region) {
+function setProxiedHtms(relUrl, region, popup) {
 
-    var data = {'relUrl': relUrl, 'regionalMap': region };
+    var data = {'relUrl': relUrl, 'regionalMap': region, 'popup': popup};
     $.ajax({
         url: "proxy.php",
         data: data,

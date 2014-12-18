@@ -1,4 +1,4 @@
-</div>
+    </div>
 </div>
 <div class="jumbotronFooter">
     <div class="container">
@@ -22,26 +22,14 @@
     </div>
 </div>
 
-<?php // modal frame for graphs/charts/maps ?>
-<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h5 class="modal-title" id="fullImageLabel"></h5>
-            </div>
-            <div class="modal-body">
-                <img id="fullImage" src="">
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="<?php echo $BASEDIR ?>js/bootstrap.js"></script>
 <script src="<?php echo $BASEDIR ?>js/maphilight.js"></script>
 <script src="<?php echo $BASEDIR ?>js/oceancolour.js"></script>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.1.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.1.0/js/bootstrap-toggle.min.js"></script>
 
 <script>
     +function ($) {

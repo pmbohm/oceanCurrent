@@ -32,6 +32,28 @@ div.mapImage img {
     border-radius: 5px;
 }
 
+.pager .previous > a, .pager .previous > span {
+    margin-right: 5px;
+}
+
+.pager li > span {
+    border: 0;
+    padding: 5px 0 0 0;
+}
+
+.modal-backdrop.in {
+    opacity: 0.9;
+}
+
+.modal-backdrop {
+    background-color: #eee;
+}
+
+.checkbox-inline {
+    font-size: small;
+    color: #428bca;
+}
+
 .mini-nav > li > a {
     padding: 5px;
     font-size: small;
@@ -42,7 +64,7 @@ div.mapImage img {
     min-height: inherit;
 }
 
-.mapPager {
+.zeroMargin {
     margin: 0;
 }
 
@@ -144,7 +166,7 @@ a.anchor:after {
 }
 
 .modal-body {
-    overflow: auto;
+    overflow: hidden;
 }
 
 .jumbotron .navbar-ocheader {
