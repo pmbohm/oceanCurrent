@@ -4,10 +4,8 @@ ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get
 include_once("include/header.php");
 ?>
     <div class="row">
-        <h3 class="highlightedHeader" >Prepared maps and animations</h3>
-    </div>
-    <div class="row">
         <div class="col-md-4">
+            <h3 class="highlightedHeader" >Prepared maps and animations</h3>
 
             <map name="imapchl">
                 <area shape="rect" coords="4  63  35  89" href="Ningaloo_chl/latest.html" title="Ningaloo">
@@ -50,6 +48,7 @@ include_once("include/header.php");
         </div>
         <div class="col-md-8">
             <div id="proxiedPagesContainer">
+                <div class="voffset4"></div>
                 <h4>Click on the map to see the graphs</h4>
             </div>
         </div>
