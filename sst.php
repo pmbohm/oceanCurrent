@@ -67,7 +67,7 @@ include_once("include/header.php");
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" data-toggle="collapse"  data-parent="#accordian" data-target="#zoomInsContent" >
                     <h4 class="panel-title">
-                        <a class="external" href=""
+                        <a class="external" href="#"
                            aria-expanded="true"
                            aria-controls="zoomInsContent">
                             Zoom Ins
@@ -91,7 +91,7 @@ include_once("include/header.php");
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab"  data-toggle="collapse" data-parent="#accordian" data-target="#midSizeContent">
                     <h4 class="panel-title">
-                        <a class="external" href=""
+                        <a class="external" href="#"
                            aria-expanded="false"
                            aria-controls="midSizeContent">
                             Mid Size
@@ -114,7 +114,7 @@ include_once("include/header.php");
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab"  data-toggle="collapse" data-parent="#accordian" data-target="#largeAreaContent">
                     <h4 class="panel-title">
-                        <a class="external" href=""
+                        <a class="external" href="#"
                            aria-expanded="false"
                            aria-controls="largeAreaContent">
                             Large Area

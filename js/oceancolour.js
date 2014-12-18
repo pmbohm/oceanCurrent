@@ -59,7 +59,6 @@ function fitModal2Window() {
     else {
         $('#featuredMapModal .modal-content .modal-body img').removeAttr("height");
         $('.modal-body').css('height','');
-        console.log(session.forceFit);
     }
 
 
