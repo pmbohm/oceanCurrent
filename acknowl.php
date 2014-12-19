@@ -63,6 +63,14 @@ include_once("include/header.php");
             data </a>,
         without which this service would not be possible.
     </p>
+
+    <hr>
+    <h3><a name=contributors>Contributors</a></h3>
+    <p>The following people have either drawn my attention to one or more news-worthy events, or contributed to the
+        writing of one or more individual news items:<br>
+        John Andrewartha(CSIRO), Mark Baird (CSIRO), Madeleine Cahill(CSIRO), Jim Mansbridge (CSIRO), Chari
+        Pattiaratchi(UWA), Moninya Roughan (UNSW), Craig Steinberg(AIMS), Andy Taylor (BoM), Roger Proctor (UTas)
+    </p>
 </div>
 <?php
 include('include/footer.php');
