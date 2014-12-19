@@ -6,9 +6,11 @@ include_once("include/header.php");
 
     <h2>What's shown</h2>
 
-    <div class="alert alert-info">(June 2012 comment: The site has had a number of recent additions, namely the ACORN
+    <div class="alert alert-info">January 2015: This page is under reconstruction due to site updates
+    </div>
+    <div class="alert alert-info">June 2012 comment: The site has had a number of recent additions, namely the ACORN
         (HF radar),
-        ANMN (moorings), SOOP(ship) and MODIS (chlorophyll) data, that are not yet described here.)
+        ANMN (moorings), SOOP(ship) and MODIS (chlorophyll) data, that are not yet described here.
     </div>
 
     <article>
@@ -79,7 +81,7 @@ include_once("include/header.php");
     </article>
 
     <article>
-        <h4>Regional maps - left panel FIX THIS<?php // todo ?> <a href="<?php echo $BASEDIR ?>sst.php" class="btn btn-primary inlineButton" type="button">SST Maps <span
+        <h4>Regional maps<?php // todo ?> <a href="<?php echo $BASEDIR ?>sst.php" class="btn btn-primary inlineButton" type="button">SST Maps <span
                     class="badge">GO</span></a></h4>
         <p>The colour-coded field is a map of tidal-residual, <a href=<?php echo $BASEDIR ?>glossary.htm#isostatic>isostatically-adjusted</a>
             <a href=<?php echo $BASEDIR ?>glossary.htm#GSLA> sea level anomaly</a>, valid for the analysis date <b>T_a</b>
@@ -115,7 +117,7 @@ include_once("include/header.php");
             interpolated coastal observations are shown on the map. Coastal sea level changes more rapidly than
             deep-ocean sealevel, so it is just as well that the coastal observations are made much more frequently than
             those by satellite over the deep sea.
-        <h4>Regional maps - right panel FIX THIS</h4>
+        <h4>Regional maps</h4>
         <p>The right panel shows the sea level map again, but this time as total sea level, ie, the anomaly plus an <a
                 href=<?php echo $BASEDIR ?>glossary.htm#CAST>CAST2008</a> estimate of the mean surface dynamic height with
             respect to 2000m included. Being overlain on SST, it is shown just as white contour lines. The result is the
