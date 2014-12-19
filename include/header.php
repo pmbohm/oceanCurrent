@@ -101,7 +101,7 @@ $isIndex = basename($_SERVER["SCRIPT_FILENAME"]) == "index.php";
                                 <li><a class="" href="<?php echo $BASEDIR ?>latestnews.php"
                                        alt="Latest News Items">Latest</a>
                                 </li>
-                                <li><a class="" href="<?php echo $BASEDIR ?>technicalnews.php"
+                                <li><a class="" href="<?php echo $BASEDIR ?>technews.php"
                                        alt="Technical News Items">Technical</a>
                                 </li>
                             </ul>
