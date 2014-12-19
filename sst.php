@@ -33,8 +33,7 @@ include_once("include/header.php");
     <area shape="rect" coords="169  121  204  173" href="Syd-Hob/latest.html" alt="Syd-Hob" title="Sydney-Hobart">
     <area shape="rect" coords="143  155  191  189" href="Tas/latest.html" alt="Tas" title="Tasmania">
     <area shape="rect" coords="26  121   74  147" href="AlbEsp/latest.html" alt="AlbEsp" title="Albany-Esperance">
-    <area shape="default" href="whatsshown.php"
-          title="Select a rectangle to see the latest high-resolution sea surface temperature imagery and other data for that region.  Argo, surface drifter, HF radar, glider and current meter data are shown if available for the day. Current velocity vectors from satellite altimetry are valid for the date shown, do not include tides and are not very accurate inside the 200m isobath.">
+
 </map>
 <map name="imap2">
     <area shape="rect" coords="129   15  190   83" href="NE/latest.html" alt="NE" title="North East">
@@ -43,8 +42,6 @@ include_once("include/header.php");
     <area shape="rect" coords="3   69   61  134" href="SW/latest.html" alt="SW" title="South West">
     <area shape="rect" coords="61   98  146  149" href="GAB/latest.html" alt="GAB" title="South">
     <area shape="rect" coords="88  149  160  189" href="SO/latest.html" alt="SO" title="Southern Ocean">
-    <area shape="default" href="whatsshown.php"
-          title="Select a rectangle to see the latest 2-panel maps of sea-level anomaly (from which we derive surface current) and 3-day-average sea surface temperature.">
 </map>
 <map name="imap3">
     <area shape="rect" coords="4  46  84  86" href="sst_n/latest.html" alt="sst_n"
@@ -57,7 +54,6 @@ include_once("include/header.php");
           title="gridded sea level anomaly from altimeters">
     <area shape="rect" coords="117  154  207  186" href="uv/latest.html" alt="uv"
           title="Surface current (from sea level anomaly plus time-mean velocity)">
-    <area shape="default" href="whatsshown.php" title="">
 </map>
 
 <div class="row">
@@ -79,12 +75,6 @@ include_once("include/header.php");
                     <div class="panel-body">
                         <img class="highlight" src="http://oceancurrent.imos.org.au/misc/imap1.gif" usemap="#imap1">
                         <?php // todo fix these links for production ?>
-                        <ul class="list-unstyled arrowed">
-                            <li>Geostrophic Currents</li>
-                            <li>Snapshot SST</li>
-                            <li>Radar</li>
-                            <li>2004 till Now ..</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -102,12 +92,6 @@ include_once("include/header.php");
                      aria-labelledby="midSize">
                     <div class="panel-body">
                         <img class="highlight" src="http://oceancurrent.imos.org.au/misc/imap2.gif" usemap="#imap2">
-                        <ul class="list-unstyled arrowed">
-                            <li>Geostrophic Currents</li>
-                            <li>Sea level</li>
-                            <li>3 day average SST</li>
-                            <li>1993 till Now ..</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -125,12 +109,6 @@ include_once("include/header.php");
                      aria-labelledby="largeArea">
                     <div class="panel-body">
                         <img class="highlight" src="http://oceancurrent.imos.org.au/misc/imap3.gif" usemap="#imap3">
-                        <ul class="list-unstyled arrowed">
-                            <li>Large area plots</li>
-                            <li>Geostrophic Currents</li>
-                            <li>Sea level</li>
-                            <li>6 day average SST</li>
-                        </ul>
                     </div>
                 </div>
             </div>

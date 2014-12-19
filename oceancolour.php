@@ -38,11 +38,6 @@ include_once("include/header.php");
             <div>
                 <h2>Ocean Colour</h2>
                 <img class="highlight" src="http://oceancurrent.imos.org.au/misc/imapchl.gif" usemap="#imapchl">
-                <ul class="list-unstyled arrowed">
-                    <li>Geostrophic Currents</li>
-                    <li>Chlorophyll a</li>
-                    <li>2002-now</li>
-                </ul>
             </div>
 
         </div>
