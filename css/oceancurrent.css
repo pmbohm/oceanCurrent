@@ -143,6 +143,15 @@ ul.arrowed li:before {
     display: none;
 }
 
+.imagesInsideFloatRight article {
+    clear: both;
+}
+
+.imagesInsideFloatRight img {
+    float: right;
+    margin: 10px;
+}
+
 dt {
     margin-top: 20px;
     font-size: 1.4em;
