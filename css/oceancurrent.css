@@ -139,6 +139,10 @@ ul.arrowed li:before {
     float: right;
 }
 
+.displayNone {
+    display: none;
+}
+
 dt {
     margin-top: 20px;
     font-size: 1.4em;

@@ -2,11 +2,14 @@ if (typeof jQuery === 'undefined') {
     throw new Error('Bootstrap\'s JavaScript requires jQuery')
 }
 
-var session = {'forceFit': 'off'};
+var session = {
+    'forceFit': 'off',
+    'resizeDoneOnce': false
+};
 
 // resize large maps to fit container
-function imgSizer(selectorContainer) {
-    var max_width = $(selectorContainer).width();
+function mainPageMapResizer() {
+    var max_width = $('div#proxiedPagesContainer').width();
     var selector = 'div#proxiedPagesContainer > div.mapImage img';
 
     // Make in memory copy of image to avoid css issues
@@ -18,16 +21,26 @@ function imgSizer(selectorContainer) {
 
             //Set variables for manipulation
             var new_width = max_width;
-            //Shrink the image and add link to full-sized image
-            $(this).animate(
-                {width: new_width},
-                'slow',
-                function () {
-                    $(this).removeAttr("style"); //added by animate
-                    $(this).attr("width", "100%"); // follow browser resizing
-                    $(this).attr("title", "This image has been scaled down.\nClick to see full size");
-                }
-            );
+
+            if (!session.resizeDoneOnce) {
+                //Shrink the image and add link to full-sized image
+                $(this).removeClass("displayNone");
+                $(this).animate(
+                    {width: new_width},
+                    'slow',
+                    function () {
+                        $(this).removeAttr("style"); //added by animate
+                        $(this).attr("width", "100%"); // follow browser resizing
+                        $(this).attr("title", "This image has been scaled down.\nClick to see full size");
+                    }
+                )
+            }
+            else {
+                $(this).attr("width", "100%");
+                $(this).attr("title", "This image has been scaled down.\nClick to see full size");
+                $(this).removeClass("displayNone");
+            }
+            session.resizeDoneOnce = true;
         }
     });
 }
@@ -41,7 +54,7 @@ function createForceFitToggle() {
         'size': 'mini'
     });
     $('#forceFitToggle').bootstrapToggle(session.forceFit); // set the state
-    $('#forceFitToggle').change(function() {
+    $('#forceFitToggle').change(function () {
         setForceFit($(this).prop('checked'));
         fitModal2Window();
     });
@@ -58,7 +71,7 @@ function fitModal2Window() {
     }
     else {
         $('#featuredMapModal .modal-content .modal-body img').removeAttr("height");
-        $('.modal-body').css('height','');
+        $('.modal-body').css('height', '');
     }
 
 

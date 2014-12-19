@@ -46,11 +46,11 @@
     <a href="#"
        data-toggle="modal"
        data-target="#featuredMapModal">
-        <img src="<?php echo $imageUrl ?>" alt="Loading <?php echo $imageUrl ?>">
+        <img class="displayNone" src="<?php echo $imageUrl ?>" alt="Loading <?php echo $imageUrl ?>">
     </a>
 </div>
 <script>
-    imgSizer("div#proxiedPagesContainer");
+    mainPageMapResizer();
     fitModal2Window();
     if (<?php echo $popup ?>) {
         $('#featuredMapModal').modal({'show':true});
