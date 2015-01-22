@@ -92,8 +92,7 @@ include_once("include/header.php");
             <h3>14 Oct update:</h3> problems at the NCI have been continuing, so updating has not been regular at all.
             Its being worked on, but the immediate problem is the federal shut-down in the US. <h3>13 Nov update:</h3>
             Recovery from the shut-down is still incomplete, as is resolution of infrastructure problems at the NCI.
-            <p>.
-            <p>.
+
             </p>
         </article>
         <article>

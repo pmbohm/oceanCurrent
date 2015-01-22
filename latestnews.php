@@ -1177,9 +1177,7 @@ include_once("include/header.php");
                 the radar data with the SST imagery is <a href=DonPer/2012/2012052820.html> striking</a>. We have
                 coloured
                 the
-                radar vectors according to whether the surface velocity field is divergent, neutral (|div(
-            <h3>v</h3>)|<
-            5E-6/s) or
+                radar vectors according to whether the surface velocity field is divergent, neutral (|div(v)|&lt; 5E-6/s) or
             convergent. Trapping of drifters in features has often been taken to signal the existence of a convergent
             surface layer, and therefore downwelling, but the recent sequence of events has not yet yielded a simple
             interpretation. The cold eddy is the remains of an elongated cold feature sandwiched on <a
