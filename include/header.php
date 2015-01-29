@@ -33,7 +33,7 @@ $isIndex = basename($_SERVER["SCRIPT_FILENAME"]) == "index.php";
             <div class="container">
                 <a href="http://www.imos.org.au/">
                     <img id="IMOSLogo" class="floatRight"
-                         src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png"
+                         src="http://static.emii.org.au/images/logo/IMOS_logo-stacked3.png"
                          title="IMOS (Australian Integrated Marine Observing System">
                 </a>
                 <header>

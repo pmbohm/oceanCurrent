@@ -1,7 +1,6 @@
 <?php echo $debug ?><?php echo $error ?>
 
 <div class="voffset4"></div>
-<h5><?php echo $imgNameDate ?></h5>
 
 <nav class="navbar navbar-default mapNavbar" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -27,8 +26,8 @@
                                     alt="Next available time period for <?php echo $relativeFolderPath ?>"
                                     title="Next available time period for <?php echo $relativeFolderPath ?>">Next
                     <span aria-hidden="true">&rarr;</span></a></li>
-            <li class="next"><a href="<?php echo $datePickerUrl ?>" alt="date picker"
-                   onclick="setProxiedHtms('<?php echo $datePickerUrl ?>');return false;">Date Picker</a></li>
+            <li class="next"><a href="<?php echo $datePickerUrl ?>" alt="date selector"
+                   onclick="setProxiedHtms('<?php echo $datePickerUrl ?>');return false;">Date Selector</a></li>
 
         </ul>
     </nav>
