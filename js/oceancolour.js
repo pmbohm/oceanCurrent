@@ -21,7 +21,6 @@ function mainPageMapResizer() {
 
             //Set variables for manipulation
             var new_width = max_width;
-
             if (!session.resizeDoneOnce) {
                 //Shrink the image and add link to full-sized image
                 $(this).removeClass("displayNone");
@@ -36,11 +35,14 @@ function mainPageMapResizer() {
                 )
             }
             else {
+                $(this).removeClass("displayNone");
                 $(this).attr("width", "100%");
                 $(this).attr("title", "This image has been scaled down.\nClick to see full size");
-                $(this).removeClass("displayNone");
             }
             session.resizeDoneOnce = true;
+        }
+        else{
+            $(this).removeClass("displayNone");
         }
     });
 }
@@ -50,8 +52,11 @@ function setForceFit(value) {
 }
 
 function createForceFitToggle() {
+
     $('#forceFitToggle').bootstrapToggle({
-        'size': 'mini'
+        'size': 'mini',
+        'on': "Fit",
+        'off': "Full"
     });
     $('#forceFitToggle').bootstrapToggle(session.forceFit); // set the state
     $('#forceFitToggle').change(function () {
