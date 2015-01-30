@@ -35,6 +35,14 @@
     +function ($) {
         $('#imap2').maphilight();
     }(jQuery);
+
+    // handle if this page was requested from a permlink url
+    +function ($) {
+        var params = parseQueryFromUrl('<?php echo $_SERVER['QUERY_STRING'] ?>');
+        if (params.permlink) {
+            setProxiedHtms(params.relativeFolderPath + "/" + params.current );
+        }
+    }(jQuery);
 </script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

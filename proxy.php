@@ -70,12 +70,16 @@ function parseLatestHtmlResults($res) {
         }
     }
 
+    $pathArray = getPathArray();
+    $guessedImageHtmlPageName = $pathArray[count($pathArray)-1];
+
     $data = array(
         'debug' => $debug,
         'relativeFolderPath' => getRelativeFolderPath(),
         'regionalMap' => isRegionalMap(),
         'imageUrl' => $imageUrl,
         'previous' => $previous[1],
+        'current' => $guessedImageHtmlPageName,
         'next' => $next[1],
         'imgNameDate' => formatFilenameAsDate($imgFilename[1]),
         'error' => $error,
@@ -83,7 +87,10 @@ function parseLatestHtmlResults($res) {
         'baseFolderUrl' => $baseFolderUrl,
         'datePickerUrl' => getRelativeFolderPath()
     );
-    $tmpl = new Template('views/proxyLatestHtmlTpl.php', $data);
+
+    $dataAsQueryString = http_build_query($data);
+    $data['permlink'] = $dataAsQueryString;
+    $tmpl = new Template('views/proxyMapPagesTpl.php', $data);
     echo $tmpl->render();
 }
 

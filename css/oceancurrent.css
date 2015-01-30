@@ -30,6 +30,8 @@ div.mapImage img {
 
 .pager li > a, .pager li > span {
     border-radius: 5px;
+    border: none;
+    background: none;
 }
 
 .pager .previous > a, .pager .previous > span {
@@ -64,7 +66,7 @@ div.mapImage img {
     min-height: inherit;
 }
 
-.zeroMargin {
+.pagerMargins {
     margin: 0;
 }
 

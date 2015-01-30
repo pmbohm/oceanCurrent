@@ -1,6 +1,17 @@
-<?php echo $debug ?><?php echo $error ?>
+<?php
+echo $debug;
+echo $error;
+
+$permlinkReferer = explode('?', $_SERVER['HTTP_REFERER'])[0];
+
+?>
 
 <div class="voffset4"></div>
+
+<h5><?php echo $imgNameDate ?></h5>
+<ul class="nav navbar-right nav-pills mini-nav">
+
+</ul>
 
 <nav class="navbar navbar-default mapNavbar" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -15,7 +26,7 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="pager zeroMargin">
+        <ul class="pager pagerMargins">
             <li class="previous"><a class="" href="<?php echo $relativeFolderPath ?>/<?php echo $previous ?>"
                                     onclick="setProxiedHtms('<?php echo $relativeFolderPath ?>/<?php echo $previous ?>');return false;"
                                     alt="Previous available time period for <?php echo $relativeFolderPath ?>"
@@ -26,14 +37,22 @@
                                     alt="Next available time period for <?php echo $relativeFolderPath ?>"
                                     title="Next available time period for <?php echo $relativeFolderPath ?>">Next
                     <span aria-hidden="true">&rarr;</span></a></li>
-            <li class="next"><a href="<?php echo $datePickerUrl ?>" alt="date selector"
-                   onclick="setProxiedHtms('<?php echo $datePickerUrl ?>');return false;">Date Selector</a></li>
+
+            <li class="next">
+                <a href="<?php echo $datePickerUrl ?>" alt="date selector"
+                                        onclick="setProxiedHtms('<?php echo $datePickerUrl ?>');return false;">Date Selector</a>
+            </li>
+            <li class="next">
+                <a onclick="return false;" href="<?php echo $referer ?>?permlink=true&<?php echo $permlink ?>">
+                    <small><span class="glyphicon glyphicon-share" aria-hidden="true"></span> permlink</a></small>
+            </li>
 
         </ul>
     </nav>
     <?php //.navbar-collapse ?>
 </nav>
 <ul class="nav navbar-right nav-pills mini-nav">
+
     <li role="presentation" class="dropdown">
         <a href="#"
            data-toggle="modal"
@@ -63,7 +82,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h5 class="modal-title" id="fullImageLabel"></h5>
-                <ul class="pager zeroMargin">
+                <ul class="pager pagerMargins">
                     <li class="previous"><a class="" href="<?php echo $relativeFolderPath ?>/<?php echo $previous ?>"
                                             onclick="setProxiedHtms('<?php echo $relativeFolderPath ?>/<?php echo $previous ?>','','true');return false;"
                                             alt="Previous available time period for <?php echo $relativeFolderPath ?>"
@@ -79,7 +98,7 @@
                     <li class="previous">
                         <span> &nbsp;
                             <label class="checkbox-inline">
-                                <input id="forceFitToggle" checked data-toggle="toggle" type="checkbox"> Fit Images
+                                <input id="forceFitToggle" checked data-toggle="toggle" type="checkbox">
                             </label>
                             <script>
                                 createForceFitToggle();
