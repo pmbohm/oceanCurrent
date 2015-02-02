@@ -42,15 +42,19 @@ $permlinkReferer = explode('?', $_SERVER['HTTP_REFERER'])[0];
                 <a href="<?php echo $datePickerUrl ?>" alt="date selector"
                                         onclick="setProxiedHtms('<?php echo $datePickerUrl ?>');return false;">Date Selector</a>
             </li>
-            <li class="next">
-                <a onclick="return false;" href="<?php echo $referer ?>?permlink=true&<?php echo $permlink ?>">
-                    <small><span class="glyphicon glyphicon-share" aria-hidden="true"></span> permlink</a></small>
+            <li class="next" >
+                <a id="permlink" type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="Direct link to this graph"
+                   data-content="<?php echo $permlinkReferer ?>?permlink=true&<?php echo $permlink ?>">
+                    <small><span class="glyphicon glyphicon-share" aria-hidden="true"></span> permlink</a></small></a>
             </li>
 
         </ul>
     </nav>
     <?php //.navbar-collapse ?>
 </nav>
+
+<div id="permlinkPopover"></div>
+
 <ul class="nav navbar-right nav-pills mini-nav">
 
     <li role="presentation" class="dropdown">
@@ -60,6 +64,7 @@ $permlinkReferer = explode('?', $_SERVER['HTTP_REFERER'])[0];
            role="button">
             <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span> see full size </a></li>
 </ul>
+
 <div class="mapImage">
     <a href="#"
        data-toggle="modal"
@@ -67,12 +72,24 @@ $permlinkReferer = explode('?', $_SERVER['HTTP_REFERER'])[0];
         <img class="displayNone" src="<?php echo $imageUrl ?>" alt="Loading <?php echo $imageUrl ?>">
     </a>
 </div>
+
 <script>
-    mainPageMapResizer();
-    fitModal2Window();
-    if (<?php echo $popup ?>) {
-        $('#featuredMapModal').modal({'show':true});
-    }
+    +function ($) {
+        mainPageMapResizer();
+        fitModal2Window();
+        if (<?php echo $popup ?>) {
+            $('#featuredMapModal').modal({'show': true});
+        }
+
+        // set popover and auto select function on the permlink button
+        $(function () {
+            $('#permlink').popover();
+            $('#permlink').on('shown.bs.popover', function () {
+                $(this + ' .popover-content').selectText();
+            });
+        })
+    }(jQuery);
+
 </script>
 
 <?php // modal frame for graphs/charts/maps ?>

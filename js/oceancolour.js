@@ -7,6 +7,55 @@ var session = {
     'resizeDoneOnce': false
 };
 
++function ($) {
+    // area image maps intercept and send to our proxy
+    $('area').each(function () {
+        setProxiedHtmOnClickAction($(this));
+    });
+
+}(jQuery);
+
+
+// markup local links that go to a place in a local page. using a hash
+// excludes hashes just used as placeholders
++function ($) {
+    $('a').each(function () {
+        var href = $(this).attr("href");
+        var notBootstrap = $(this).attr('class') != "external";
+        if (href) {
+            if (href.indexOf('#') >= 0 && href.length > 3 && notBootstrap) {
+                $(this).addClass('anchor');
+            }
+        }
+    });
+}(jQuery);
+
+//
+/*
+ * highlighting of imagemaps
+ *
+ <img src="http://davidlynch.org/projects/maphilight/docs/demo_simple.png" class="map " usemap="#simple" >
+ <map name="simple">
+ <area href="#" shape="poly" coords="47,62,123,67,134,72,135,118,50,160" >
+ </map>
+
+ Example using rectangle
+ <area shape="rect" coords="146,83,199,149" href="SE/latest.html" title="SE">
+ *
+ *
+ * */
++function ($) {
+    $('img.highlight').maphilight({
+        //'alwaysOn': true,
+        'fillColor': 'FF7251',
+        'fillOpacity': 0.4,
+        'strokeColor': 'FF532A',
+        'strokeOpacity': 1,
+        'strokeWidth': 2
+    });
+}(jQuery);
+
+
 // resize large maps to fit container
 function mainPageMapResizer() {
     var max_width = $('div#proxiedPagesContainer').width();
@@ -80,14 +129,6 @@ function fitModal2Window() {
     }
 }
 
-+function ($) {
-    // area image maps intercept and send to our proxy
-    $('area').each(function () {
-        setProxiedHtmOnClickAction($(this));
-    });
-
-}(jQuery);
-
 function setProxiedHtmOnClickAction(thisAnchorId, folderName) {
 
     var isARegionalMap = thisAnchorId.attr("region"); // todo these tags need to be added to be appropriate <area> tags
@@ -141,45 +182,6 @@ function setProxiedHtms(relUrl, region, popup) {
     });
 }
 
-// markup local links that go to a place in a local page. using a hash
-// excludes hashes just used as placeholders
-+function ($) {
-    $('a').each(function () {
-        var href = $(this).attr("href");
-        var notBootstrap = $(this).attr('class') != "external";
-        if (href) {
-            if (href.indexOf('#') >= 0 && href.length > 3 && notBootstrap) {
-                $(this).addClass('anchor');
-            }
-        }
-    });
-}(jQuery);
-
-//
-/*
- * highlighting of imagemaps
- *
- <img src="http://davidlynch.org/projects/maphilight/docs/demo_simple.png" class="map " usemap="#simple" >
- <map name="simple">
- <area href="#" shape="poly" coords="47,62,123,67,134,72,135,118,50,160" >
- </map>
-
- Example using rectangle
- <area shape="rect" coords="146,83,199,149" href="SE/latest.html" title="SE">
- *
- *
- * */
-+function ($) {
-    $('img.highlight').maphilight({
-        //'alwaysOn': true,
-        'fillColor': 'FF7251',
-        'fillOpacity': 0.4,
-        'strokeColor': 'FF532A',
-        'strokeOpacity': 1,
-        'strokeWidth': 2
-    });
-}(jQuery);
-
 function parseQueryFromUrl(str) {
     if(typeof str != "string" || str.length == 0) return {};
     var s = str.split("&");
@@ -197,3 +199,20 @@ function parseQueryFromUrl(str) {
     }
     return query;
 }
+
+//http://stackoverflow.com/questions/12243898/how-to-select-all-text-in-contenteditable-div
+jQuery.fn.selectText = function(){
+    var doc = document;
+    var element = this[0];
+    if (doc.body.createTextRange) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(element);
+        range.select();
+    } else if (window.getSelection) {
+        var selection = window.getSelection();
+        var range = document.createRange();
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+};

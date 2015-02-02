@@ -222,3 +222,8 @@ a.anchor:after {
     cursor: pointer;
 }
 
+.popover {
+    max-width: none;
+    overflow: auto;
+}
+
