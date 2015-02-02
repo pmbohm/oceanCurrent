@@ -115,20 +115,28 @@ function createForceFitToggle() {
 }
 
 function fitFeaturedMapModal2Window() {
-    // todo make this fit width and height. Eg phone screen portrait aspect
 
+    var height = $(window).height();
+    var width = $(window).width();
+    var maxDimension = (Math.max(height, width) == height) ? "height" : "width";
 
     if (session.forceFit == "on") {
-        $('#featuredMapModal .modal-body').css('height', $(window).height() - 100); // set immediately
-        // set on show
-        $('#featuredMapModal').on('show.bs.modal', function () {
-            $('.modal-body').css('height', $(window).height() - 100);
-        });
-        $('#featuredMapModal .modal-content .modal-body img').attr("height", "100%");
+
+        // set popup container to fit first
+        (maxDimension == "height") ?
+            $('#featuredMapModal .modal-body').css('height', $(window).height() - 100):
+            $('#featuredMapModal .modal-body').css('width', $(window).width() - 100);
+
+        // set image to fit
+        (maxDimension == "height") ?
+            $('#featuredMapModal .modal-content .modal-body img').attr("height", "100%"):
+            $('#featuredMapModal .modal-content .modal-body img').attr("width", "100%");
+
     }
+    // reset
     else {
-        $('#featuredMapModal .modal-content .modal-body img').removeAttr("height");
-        $('.modal-body').css('height', '');
+        $('#featuredMapModal .modal-content .modal-body img').removeAttr("height").removeAttr("width");
+        $('.modal-body').css('height', '').css('width', '');
     }
 }
 
