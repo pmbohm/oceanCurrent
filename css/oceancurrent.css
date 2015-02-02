@@ -209,14 +209,16 @@ a.anchor:after {
 .miniHeader h3  {
     display: inline;
     float: left;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
 .miniHeader img  {
-    height: 50px
+    height: 40px;
 }
-
 
 /* accordians */
 .panel-heading {
     cursor: pointer;
 }
+
