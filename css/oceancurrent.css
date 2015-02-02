@@ -223,7 +223,7 @@ a.anchor:after {
 }
 
 .popover {
-    max-width: none;
+    max-width: 500px;
     overflow: auto;
 }
 

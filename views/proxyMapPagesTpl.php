@@ -75,8 +75,10 @@ $permlinkReferer = explode('?', $_SERVER['HTTP_REFERER'])[0];
 
 <script>
     +function ($) {
+
         mainPageMapResizer();
-        fitModal2Window();
+        fitFeaturedMapModal2Window();
+
         if (<?php echo $popup ?>) {
             $('#featuredMapModal').modal({'show': true});
         }

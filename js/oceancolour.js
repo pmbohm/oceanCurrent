@@ -110,13 +110,16 @@ function createForceFitToggle() {
     $('#forceFitToggle').bootstrapToggle(session.forceFit); // set the state
     $('#forceFitToggle').change(function () {
         setForceFit($(this).prop('checked'));
-        fitModal2Window();
+        fitFeaturedMapModal2Window();
     });
 }
 
-function fitModal2Window() {
+function fitFeaturedMapModal2Window() {
+    // todo make this fit width and height. Eg phone screen portrait aspect
+
+
     if (session.forceFit == "on") {
-        $('.modal-body').css('height', $(window).height() - 100); // set immediately
+        $('#featuredMapModal .modal-body').css('height', $(window).height() - 100); // set immediately
         // set on show
         $('#featuredMapModal').on('show.bs.modal', function () {
             $('.modal-body').css('height', $(window).height() - 100);
