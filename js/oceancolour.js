@@ -127,6 +127,16 @@ function fitFeaturedMapModal2Window() {
             $('#featuredMapModal .modal-body').css('height', $(window).height() - 100):
             $('#featuredMapModal .modal-body').css('width', $(window).width() - 100);
 
+/*        // set on show
+        $('#featuredMapModal').on('show.bs.modal', function () {
+            if (maxDimension = "height") {
+                $('.modal-body').css('height', $(window).height() - 100);
+            }
+            else {
+                $('.modal-body').css('width', $(window).width() - 100);
+            }
+        });*/
+
         // set image to fit
         (maxDimension == "height") ?
             $('#featuredMapModal .modal-content .modal-body img').attr("height", "100%"):
