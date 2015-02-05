@@ -12,7 +12,8 @@
 
 date_default_timezone_set('Australia/Hobart'); //required by PHP date function
 
-define("CONTEXT", "OceanCurrent");
+define("CONTEXT", "oceancurrent");
+
 //define("DEBUG", true); // used in proxy.php
 define("ENVIRONMENT", "development"); // used in proxy.php
 define("BASEURL", "http://oceancurrent.imos.org.au");

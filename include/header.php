@@ -1,7 +1,7 @@
 <?php
 
 include_once('config.php');
-$BASEDIR = getBaseDir(getcwd(), constant('CONTEXT')); // todo does this work in production??
+$BASEDIR = getBaseDir(getcwd(), constant('CONTEXT')); // context must be correct
 
 $isIndex = basename($_SERVER["SCRIPT_FILENAME"]) == "index.php";
 

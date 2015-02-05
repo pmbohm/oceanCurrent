@@ -1,5 +1,6 @@
 <?php
 
+// todo contains absolute links !!
 // todo this is added to every file. it need to be added to a custom  php.ini file
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 
@@ -8,7 +9,7 @@ include_once("include/header.php");
 
 ?>
 
-<h3 class="highlightedHeader">Maps of satellite derived surface properties, SST, ocean colour and geostrophic
+<h3>Maps of satellite derived surface properties, SST, ocean colour and geostrophic
     currents</h3>
 <article>
     <div class="row" id="splashProductcontainer">
@@ -37,7 +38,6 @@ include_once("include/header.php");
         </div>
 
     </div>
-    <hr>
 </article>
 <article>
     <h3>Imagery for importing into Google Earth</h3>

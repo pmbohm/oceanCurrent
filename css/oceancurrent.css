@@ -236,13 +236,13 @@ a.anchor:after {
     background-color: #666;
     color: white;
     padding: 15px;
-    border-radius: 4px;
+    border-radius: 8px;
     height: 250px; /* required for uniformity */
 }
 
 #splashProductcontainer .splashProduct.one {
 
-    margin-left: 15px;
+    margin-left: 10px;
     background:
     url(../img/contours.png),
     radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.1) 21%, rgba(255,255,255,.1) 34%, transparent 35%, transparent),
@@ -254,7 +254,7 @@ a.anchor:after {
 
 #splashProductcontainer .splashProduct.two {
 
-    margin-right: 15px;
+    margin-right: 10px;
     background:
     url(../img/contours.png),
     radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.1) 21%, rgba(255,255,255,.1) 34%, transparent 35%, transparent),
