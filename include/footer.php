@@ -15,7 +15,7 @@
                 <p>Use of this web site and information available from it is subject to our
                     <a href="http://imos.org.au/imostermsofuse0.html">Conditions of use</a>
                 </p>
-                <p>&copy; <? echo date("Y") ?> IMOS</p>
+                <p>&copy; <?php echo date("Y") ?> IMOS</p>
 
             </div>
         </footer>

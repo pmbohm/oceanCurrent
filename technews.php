@@ -1,4 +1,4 @@
-<?
+<?php
 //$title = "TEMPLATE";
 ini_set('include_path', './' . PATH_SEPARATOR . '../' . PATH_SEPARATOR . ini_get('include_path'));
 include_once("include/header.php");
@@ -892,7 +892,7 @@ include_once("include/header.php");
         </article>
         <article>
             <h3>November 26, 2008. IMOS Slocum Glider 109 ('Nemo') launched. </h3>
-            <p> Mission: to circumnavigate the warm-core eddy off <a href=SNSW/latest.html>[southern NSW]</a>, then
+            <p>Mission: to circumnavigate the warm-core eddy off <a href=SNSW/latest.html>[southern NSW]</a>, then
                 return to the coast.
                 <a href=http://imos.org.au/anfog.html>[Australian National Facility for Ocean Gliders]</a>
                 <a href=http://www.sese.uwa.edu.au/~hollings/anfog/NSW-20081126-Nemo.kmz>[Nemo kmz]</a>.
@@ -900,13 +900,13 @@ include_once("include/header.php");
         </article>
         <article>
             <h3>November 21, 2008. Apology for outage. </h3>
-            <p> Sorry about the non-updating of this website over the last 2 weeks. We have been at an <a
+            Sorry about the non-updating of this website over the last 2 weeks. We have been at an <a
                     href=http://www.ostst-godae-2008.com>altimetry meeting</a> and a software problem occured here.
                 <br>
         </article>
         <article>
             <h3>October 21, 2008: Budget cuts threaten satellites</h3>
-            <p> Budget tightening in Europe and USA is threatening the continuity of space-based earth observations.
+            Budget tightening in Europe and USA is threatening the continuity of space-based earth observations.
                 Please consider supporting the <a
                     href="http://ioc-unesco.org/index.php?option=com_content&task=view&id=81&Itemid=2"> IOC
                     petition </a> (
@@ -915,7 +915,7 @@ include_once("include/header.php");
             <br></article>
         <article>
             <h3>June 20, 2008: Launch of Jason-2 (OSTM). </h3>
-            <p> Watch this crucial event live on <a href=http://www.nasa.gov/multimedia/nasatv>NASA TV</a>. The launch
+             Watch this crucial event live on <a href=http://www.nasa.gov/multimedia/nasatv>NASA TV</a>. The launch
                 window is 5:46-5:55pm Fri 20 June AEST. Commentary commences 2h before. <a
                     href=http://www.csiro.au/multimedia/SatelliteandOceanResearch.html>[more]</a>
                 <br>
@@ -923,24 +923,25 @@ include_once("include/header.php");
         <article>
             <h3>November 28+, 2007: <a href=http://basefx.com.au/expedition/ target="blank">[BASE 3 Rowing
                     Challenge]</a> leaves Auckland</h3>
-            <p><a href=goinroin/track10d.kml>[kml file of track]</a> <a href="LordHoweS/latest.html">[SST and
+            <a href=goinroin/track10d.kml>[kml file of track]</a> <a href="LordHoweS/latest.html">[SST and
                     currents]</a> <a href=goinroin/index.htm target="blank">[Possible routes]</a>
                 <br>
         </article>
         <article>
             <h3>November 14, 2007: <a href="http://www.crossingtheditch.com.au/" target="_blank">[Crossing the
                     Ditch]</a></h3>
-            <p>Two brave souls paddle across the Tasman Sea, with a little help from the East Australian Current and our
+            Two brave souls paddle across the Tasman Sea, with a little help from the East Australian Current and our
                 maps of it.
                 <br>
         </article>
         <article>
             <h3>August 2, 2007: <a href=http://www.bom.gov.au/bluelink/>BLUElink </a></h3>
-            <p> Ocean Forecasts (currents, sea level, subsurface temperature, etc) become publicly available in
+             Ocean Forecasts (currents, sea level, subsurface temperature, etc) become publicly available in
                 Australia for the first time.
-                </dl>
+
+        </article>
     </div>
 
-<?
+<?php
 include("include/footer.php");
 ?>
