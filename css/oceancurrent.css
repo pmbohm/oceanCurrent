@@ -36,10 +36,13 @@ div.mapImage img {
 .pager li > a, .pager li > span {
     border-radius: 5px;
     border: none;
-    background: none;
 }
 
 .pager .previous > a, .pager .previous > span {
+    margin-right: 5px;
+}
+
+.pager .next > a, .pager .next > span {
     margin-right: 5px;
 }
 
@@ -91,6 +94,10 @@ h1, h2, h3, h4 {
     padding: 20px 0;
 }
 
+.whiteWrapper img{
+    border-radius: 8px;
+}
+
 .jumbotron {
     margin-bottom: 0;
 }
@@ -99,16 +106,18 @@ h1, h2, h3, h4 {
     color: #E6E6E6;
 }
 
-.jumbotron, .jumbotronFooter {
+.jumbotron {
     background-color: #666;
 }
 
-.jumbotron, .jumbotronFooter {
-    background:
-    url(../img/contours.png),
-    linear-gradient(to bottom, rgba(80,80,80,1) 1%,rgba(90,90,90,0) 90%, rgba(80,80,80,1) 100%);
-    background-size: auto, auto;
+.jumbotronFooter {
+    background-color: #777;
+}
 
+.jumbotron {
+    background: url(../img/contours.png),
+    linear-gradient(to bottom, rgba(80, 80, 80, 1) 1%, rgba(90, 90, 90, 0) 90%, rgba(80, 80, 80, 1) 100%);
+    background-size: auto, auto;
 }
 
 .jumbotron h1,

@@ -46,7 +46,6 @@ var session = {
  * */
 +function ($) {
     $('img.highlight').maphilight({
-        //'alwaysOn': true,
         'fillColor': 'FF7251',
         'fillOpacity': 0.4,
         'strokeColor': 'FF532A',
@@ -226,3 +225,7 @@ jQuery.fn.selectText = function(){
         selection.addRange(range);
     }
 };
+
+function getDocumentReferrer() {
+    return window.location.href.toString();
+}

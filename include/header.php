@@ -4,7 +4,6 @@ include_once('config.php');
 $BASEDIR = getBaseDir(getcwd(), constant('CONTEXT')); // context must be correct
 
 $isIndex = basename($_SERVER["SCRIPT_FILENAME"]) == "index.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +33,8 @@ $isIndex = basename($_SERVER["SCRIPT_FILENAME"]) == "index.php";
                 <a href="http://www.imos.org.au/">
                     <img id="IMOSLogo" class="floatRight"
                          src="http://static.emii.org.au/images/logo/IMOS_logo-stacked3.png"
-                         title="IMOS (Australian Integrated Marine Observing System">
+                         title="IMOS (Australian Integrated Marine Observing System"
+                        height="130">
                 </a>
                 <header>
                     <a class="homelink" href="<?php echo $BASEDIR ?>index.php" alt="IMOS Ocean Current home page"

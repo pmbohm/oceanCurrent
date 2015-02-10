@@ -2,8 +2,6 @@
 echo $debug;
 echo $error;
 
-$permlinkReferer = explode('?', $_SERVER['HTTP_REFERER'])[0];
-
 ?>
 
 <div class="voffset4"></div>
@@ -44,7 +42,7 @@ $permlinkReferer = explode('?', $_SERVER['HTTP_REFERER'])[0];
             </li>
             <li class="next" >
                 <a id="permlink" type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" title="Direct link to this graph"
-                   data-content="<?php echo $permlinkReferer ?>?permlink=true&<?php echo $permlink ?>">
+                   data-real-content="<?php echo $permlink ?>">
                     <small><span class="glyphicon glyphicon-share" aria-hidden="true"></span> permlink</a></small></a>
             </li>
 
@@ -52,8 +50,6 @@ $permlinkReferer = explode('?', $_SERVER['HTTP_REFERER'])[0];
     </nav>
     <?php //.navbar-collapse ?>
 </nav>
-
-<div id="permlinkPopover"></div>
 
 <ul class="nav navbar-right nav-pills mini-nav">
 
@@ -85,7 +81,12 @@ $permlinkReferer = explode('?', $_SERVER['HTTP_REFERER'])[0];
 
         // set popover and auto select function on the permlink button
         $(function () {
-            $('#permlink').popover();
+            $('#permlink').popover({
+                content: function() {
+                    return getDocumentReferrer() + "?permlink=true&" + $(this).attr('data-real-content');
+                }
+            });
+            // highlight ready for copying
             $('#permlink').on('shown.bs.popover', function () {
                 $(this + ' .popover-content').selectText();
             });

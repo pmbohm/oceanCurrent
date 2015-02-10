@@ -6,18 +6,11 @@
  * Sets the include_path configuration option for the duration of the script.
  */
 
-// report all errors but don't display them publicly
-//error_reporting(E_ALL);
-//ini_set('display_errors', 0);
-
 date_default_timezone_set('Australia/Hobart'); //required by PHP date function
 
 define("CONTEXT", "oceancurrent");
-
-//define("DEBUG", true); // used in proxy.php
-define("ENVIRONMENT", "development"); // used in proxy.php
+define("DEBUG", false); // used in proxy.php
 define("BASEURL", "http://oceancurrent.imos.org.au");
-
 
 function getBaseDir($fullCwd, $context) {
     $basedir = "";
@@ -33,7 +26,7 @@ function getBaseDir($fullCwd, $context) {
     return $basedir;
 }
 
-function  getRelPath($fullCwd) {
+function getRelPath($fullCwd) {
 
     $context_document_root = $_SERVER["CONTEXT_DOCUMENT_ROOT"];
     $res = subtractString($fullCwd, $context_document_root);

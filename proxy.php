@@ -25,7 +25,6 @@ if ($_GET && $_GET['relUrl']) {
 function getFullUrlFromParams($val) {
     $fullUrlArray = array(
         constant('BASEURL'),
-        $BASEDIR,
         urldecode($val)
     );
     return implode("/", array_filter($fullUrlArray));
@@ -33,7 +32,10 @@ function getFullUrlFromParams($val) {
 
 function parseLatestHtmlResults($res) {
 
-    if (DEBUG == 1) {
+    $debug = '';
+    $error = '';
+
+    if (constant('DEBUG') == 1) {
         $debug = "<code>\n";
         $debug .= nl2br(htmlspecialchars($res)) . "\n\n";
         $debug .= "</code><BR><BR>\n\n\n";
@@ -83,7 +85,7 @@ function parseLatestHtmlResults($res) {
         'next' => $next[1],
         'imgNameDate' => formatFilenameAsDate($imgFilename[1]),
         'error' => $error,
-        'popup' => ($_GET['popup']) ?: 'false',
+        'popup' => isset($_GET['popup']) ? 'true' : 'false',
         'baseFolderUrl' => $baseFolderUrl,
         'datePickerUrl' => getRelativeFolderPath()
     );
@@ -96,7 +98,9 @@ function parseLatestHtmlResults($res) {
 
 function parseIndexHtmlResults($res) {
 
-    if (DEBUG == 1) {
+    $debug = '';
+
+    if (constant('DEBUG') == 1) {
         $debug = "<code>\n";
         $debug .= nl2br(htmlspecialchars($res)) . "\n\n";
         $debug .= "</code><BR><BR>\n\n\n";
@@ -172,7 +176,7 @@ function getPathArray() {
 }
 
 function isRegionalMap() {
-    return ($_GET['regionalMap'] == "true");
+    return (isset($_GET['regionalMap']));
 }
 
 function formatFilenameAsDate($filename) {

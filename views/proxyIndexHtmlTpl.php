@@ -1,5 +1,4 @@
 <?php echo $debug ?>
-<?php echo $parentRelativeFolderPath ?>
 
 <div id="indexPageLinks">
     <h2>Date Index for <?php echo $relativeFolderPath ?></h2>
