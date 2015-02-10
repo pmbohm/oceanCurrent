@@ -3,6 +3,11 @@
 html, body {
     height: 100%;
     background-color: #666;
+    color: #666;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #666;
 }
 
 /*
@@ -78,6 +83,9 @@ h1, h2, h3, h4 {
     font-style: italic;
 }
 
+.miniHeader * {
+    color: white;
+}
 .whiteWrapper {
     background-color: #FFFFFF;
     padding: 20px 0;
@@ -85,29 +93,35 @@ h1, h2, h3, h4 {
 
 .jumbotron {
     margin-bottom: 0;
-    padding-bottom: 10px;
 }
 
 .jumbotron .highlightedHeader {
-    color: black;
+    color: #E6E6E6;
 }
 
-.jumbotron, .jumbotronFooter, .jumbotronNav {
+.jumbotron, .jumbotronFooter {
     background-color: #666;
+}
+
+.jumbotron, .jumbotronFooter {
+    background:
+    url(../img/contours.png),
+    linear-gradient(to bottom, rgba(80,80,80,1) 1%,rgba(90,90,90,0) 90%, rgba(80,80,80,1) 100%);
+    background-size: auto, auto;
+
 }
 
 .jumbotron h1,
 .jumbotron h2,
 .jumbotron a.homelink {
-    color: inherit;
+    color: #919191;
     margin: 0;
 }
 
 .jumbotronFooter {
     color: white;
-    margin-bottom: 30px;
     padding: 50px 15px;
-    padding-bottom: 70px;
+    padding-bottom: 90px;
     font-size: 12px;
 }
 
@@ -117,10 +131,6 @@ h1, h2, h3, h4 {
 
 .jumbotronFooter a {
     color: #ccc;
-}
-
-#IMOSLogo {
-    margin-right: 40px;
 }
 
 ul.arrowed li:before {
@@ -215,6 +225,7 @@ a.anchor:after {
 
 .miniHeader img  {
     height: 40px;
+    margin-right: 40px;
 }
 
 /* accordians */
@@ -227,6 +238,9 @@ a.anchor:after {
     overflow: auto;
 }
 
+#splashProductcontainer * {
+    color: white;
+}
 /* all classes starting with 'col...' inside the bootstrap row class */
 #splashProductcontainer [class^="col"] {
     padding: 2px;
